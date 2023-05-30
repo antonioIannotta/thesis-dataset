@@ -1,0 +1,2 @@
+columns_to_remove = id_student, id_student_original, id_year, id_grade, id_class_group, id_school, id_student_16_19, id_school_16_19, student_questionnaire, principals_questionnaire, family_questionnaire, teachers_questionnaire, census
+remove all the rows with scores = 0?

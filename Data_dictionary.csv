@@ -1,0 +1,567 @@
+,Unnamed: 0,Unnamed: 1,Unnamed: 2,Missing values,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13,Unnamed: 14,Unnamed: 15,Unnamed: 16
+0,,,,15-16,,16-17,,,17-18,,,18-19,,,,,
+1,Variable name,Source,Type,3º,6º,3º,6º,4º,3º,6º,4º,6º,4º,Sensitive attribute,Important feature,Transformed variable,Description
+2,id_student,Identifiers,ID,0,0,0,0,0,0,0,0,0,0,--,--,--,Student identifier
+3,id_student_original,Identifiers,ID,0.01341165,0.01709237,0.00062461,0.00061786,0,0.00121581,0.00121175,0,0.00836061,0,--,--,--,"Original student ID in the ACCUEE database. IDs might be repeated between years. Missing IDs are because the student questionnaire is missing, but principals, family or teacher questionnaires are available"
+4,id_year,Identifiers,ID,0,0,0,0,0,0,0,0,0,0,--,--,--,Academic year
+5,id_grade,Identifiers,ID,0,0,0,0,0,0,0,0,0,0,--,--,--,"Grade/level of education. Missing values are because the student questionnaire is missing, but principals, family or teacher questionnaires are available"
+6,id_class_group,Identifiers,ID,0.24204601,0.22418039,0.06527171,0.08063021,0.06417625,0.04650456,0.05634656,0.05621392,0.08949887,0.06132629,--,--,--,Class group
+7,id_school,Identifiers,ID,0.00107685,0.00478007,0.0003123,0.00185357,0.06417625,0.00607903,0.00151469,0.05621392,0.00377739,0.06132629,--,--,--,School identifier
+8,id_student_16_19,Identifiers,ID,0.14356339,1,1,1,1,1,1,1,0.11830773,1,--,--,--,Panel data information. Identifies the same student in third grade (15-16 academic year) and sixth grade (18-19 academic year)
+9,id_school_16_19,Identifiers,ID,0.10562898,0.09019362,1,1,1,1,1,1,0.09982372,0.79166667,--,--,--,Panel data information. Identifies the same school in third grade (15-16 academic year) and sixth grade (18-19 academic year)
+10,student_questionnaire,Info,Info,--,--,--,--,--,--,--,--,--,--,--,--,--,Identifies if the information of the student questionnaire is available
+11,principals_questionnaire,Info,Info,--,--,--,--,--,--,--,--,--,--,--,--,--,Identifies if the information of the principals questionnaire is available
+12,family_questionnaire,Info,Info,--,--,--,--,--,--,--,--,--,--,--,--,--,Identifies if the information of the family questionnaire is available
+13,teachers_questionnaire,Info,Info,--,--,--,--,--,--,--,--,--,--,--,--,--,Identifies if the information of the teachers questionnaire is available
+14,census,Info,Info,--,--,--,--,--,--,--,--,--,--,--,--,--,Identifies census (1) observations vs sample (0) observations
+15,scores,Info,Info,--,--,--,--,--,--,--,--,--,--,--,--,--,Identifies if the information of the student scores is available
+16,score_MAT,Student scores,Continuous,0.08179148,0.10028487,0.0193629,0.02625888,0.20019157,0.04285714,0.02817328,0.23488301,0.04497608,0.26085681,Yes,Yes,No,Score in Mathematics
+17,level_MAT,Student scores,Categorical,0.08179148,0.10028487,0.0193629,0.02625888,0.20019157,0.04285714,0.02817328,0.23488301,0.04497608,0.26085681,Yes,Yes,No,Proficiency levels in Mathematics
+18,score_LEN,Student scores,Continuous,0.080372,0.09487712,0.02061212,0.02811245,0.07790549,0.04012158,0.0212057,0.06381039,0.0452279,0.09242958,Yes,Yes,No,Score in Spanish Language
+19,level_LEN,Student scores,Categorical,0.080372,0.09487712,0.02061212,0.02811245,0.07790549,0.04012158,0.0212057,0.06381039,0.0452279,0.09242958,Yes,Yes,No,Proficiency levels in Spanish Language
+20,score_ING,Student scores,Continuous,1,0.09647047,1,0.03521779,0.12132822,1,0.02453802,0.09358857,0.04417023,0.11766432,Yes,Yes,No,Score in English
+21,level_ING,Student scores,Categorical,1,0.09647047,1,0.03521779,0.12132822,1,0.02453802,0.09358857,0.04417023,0.11766432,Yes,Yes,No,Proficiency levels in English
+22,a1,Student questionnaire,Categorical,0.14796867,0.99719956,0.06589631,0.081557,0.06449553,0.04772036,0.05786125,0.05621392,0.01052632,0.00234742,Yes,Yes,No,Sex
+23,a2,Student questionnaire,Categorical,0.1052374,0.09656704,0.06620862,0.081557,0.06768838,0.04802432,0.05846713,0.05894865,1,1,No,No,No,Birth year
+24,a3a,Student questionnaire,Categorical,0.12574645,0.12249529,0.06589631,0.08124807,0.06417625,1,1,0.12336676,1,0.12910798,No,No,No,Living with the mother
+25,a3b,Student questionnaire,Categorical,0.18937837,0.20211482,0.06589631,0.08124807,0.06417625,1,1,0.35460346,1,0.37411972,No,No,No,Living the father
+26,living_with_father_mother,Student questionnaire,Categorical,0.19686735,0.21186809,0.06589631,0.08124807,0.06417625,1,1,0.38802796,1,0.40757042,No,No,Yes,Transformation of a3a and a3b. Living with the father and the mother
+27,a3c,Student questionnaire,Categorical,0.26696035,0.27656801,0.06589631,0.08124807,0.06417625,1,1,0.48435126,1,0.52024648,No,No,No,Living with brother/sister
+28,a3d,Student questionnaire,Categorical,0.50895742,0.53836126,0.06589631,0.08124807,0.06417625,1,1,0.90641143,1,0.91901408,No,No,No,Living with other relatives
+29,a3et,Student questionnaire,Categorical,0.57596672,0.60026073,0.06589631,0.08124807,0.06417625,1,1,0.92950471,1,0.94366197,No,No,No,Living with other people
+30,a3f,Student questionnaire,Categorical,1,1,1,1,1,1,1,0.98966879,1,0.98943662,No,No,No,Living in foster homes
+31,a4,Student questionnaire,Categorical,0.13729809,0.17966298,0.06589631,0.08124807,0.06417625,0.05136778,0.05877007,1,0.09901788,1,Yes,Yes,No,Has repeated one or two times
+32,repeater,Student questionnaire,Categorical,0.13729809,0.17966298,0.06589631,0.08124807,0.06417625,0.05136778,0.05877007,1,0.09901788,1,Yes,Yes,Yes,Transformation of A4. Has repeated one or more times
+33,a5,Student questionnaire,Categorical,0.11512482,0.10279562,0.06589631,0.08124807,1,0.05106383,0.05816419,1,0.09861496,1,No,Yes,No,Frequency has missed class unexcused this course
+34,a6nm,Student questionnaire,Continuous,0.41864905,0.31065617,0.24203623,0.20852641,1,1,1,1,1,1,No,Yes,No,homework hours/day
+35,a7,Student questionnaire,Categorical,0.10195791,0.09033847,0.06589631,0.08124807,1,0.05167173,0.05816419,1,0.09921934,1,No,Yes,No,homework days/week
+36,a8a,Student questionnaire,Categorical,0.12153696,0.11119695,0.06589631,0.08124807,0.06417625,1,0.05967889,0.05803707,0.10062956,0.06308685,No,Yes,No,Frequency of computer use at home
+37,a8b,Student questionnaire,Categorical,0.18179148,0.1459128,0.06589631,0.08124807,0.06417625,1,0.06028476,0.06259496,0.1017376,0.07012911,No,Yes,No,Frequency of computer use at school
+38,a8c,Student questionnaire,Categorical,0.19745472,0.16551591,1,0.08124807,0.06417625,1,0.06149652,0.06289881,0.10430622,0.07306338,No,No,No,Frequency of computer use elsewhere
+39,a09a,Student questionnaire,Categorical,1,1,1,1,1,1,1,0.0607718,1,0.06631455,No,No,No,Degree of agreement: Students pay attention to what the teachers say
+40,a09b,Student questionnaire,Categorical,1,1,1,1,1,1,1,0.06137952,1,0.06602113,No,No,No,Degree of agreement: There is silence and order
+41,a09c,Student questionnaire,Categorical,1,1,1,1,1,1,1,0.06168338,1,0.06514085,No,No,No,Degree of agreement: The teacher has to wait a long time for the students to shut up
+42,a09d,Student questionnaire,Categorical,1,1,1,1,1,1,1,0.06168338,1,0.06690141,No,No,No,Degree of agreement: Students can work in good conditions
+43,a09e,Student questionnaire,Categorical,1,1,1,1,1,1,1,0.06198724,1,0.06660798,No,No,No,Degree of agreement: Students do not start working long after the class has started
+44,a9a,Student questionnaire,Categorical,0.12085169,0.10651345,1,0.08124807,0.06417625,1,0.05877007,0.05742935,0.10022664,0.06279343,No,No,No,Frequency I use the internet: information about studies
+45,a9b,Student questionnaire,Categorical,0.14508076,0.12210902,1,0.08124807,0.06417625,1,0.05907301,0.05864479,0.10219088,0.06455399,No,No,No,Frequency I use the internet: play/search for info about games
+46,a9c,Student questionnaire,Categorical,0.15433186,0.1253923,1,0.08124807,0.06417625,1,0.05967889,0.05986022,0.102896,0.06455399,No,No,No,Frequency I use the internet: search for information on sports
+47,a9d,Student questionnaire,Categorical,0.1473813,0.12046738,1,0.08124807,0.06417625,1,0.05907301,0.05955637,0.10224125,0.06484742,No,No,No,Frequency I use the Internet: search for information about music
+48,a9e,Student questionnaire,Categorical,0.14909447,0.12104679,1,0.08124807,0.06417625,1,0.05877007,0.06016408,0.10360111,0.06484742,No,No,No,Frequency I use the Internet: search for information on other topics
+49,a9f,Student questionnaire,Categorical,0.15017132,0.12032253,1,0.08124807,0.06417625,1,0.05877007,0.05955637,0.10244271,0.06396714,No,No,No,Frequency I use the internet: communicate with other people
+50,a9g,Student questionnaire,Categorical,1,1,1,0.08124807,0.06417625,1,0.05877007,0.05955637,0.10239234,0.06367371,No,No,No,Frequency I use the internet: use of social media networks
+51,a10a,Student questionnaire,Categorical,0.12814488,0.11419053,0.06589631,0.08124807,0.06417625,0.05288754,0.05877007,0.0622911,0.09906824,0.0657277,No,No,No,Work with teachers: they explain most of the class
+52,a10b,Student questionnaire,Categorical,0.13857073,0.1157356,0.06589631,0.08124807,0.06417625,0.05714286,0.05877007,0.06259496,0.09962226,0.06631455,No,No,No,Work with teachers: we do presentations of certain topics
+53,a10c,Student questionnaire,Categorical,0.1372002,0.12017768,0.06589631,0.08124807,0.06417625,0.05592705,0.05937595,0.06289881,0.10052883,0.06690141,No,No,No,Work with teachers: while they explain they ask us
+54,a10d,Student questionnaire,Categorical,0.13450808,0.11177635,0.06589631,0.08124807,0.06417625,0.05714286,0.05846713,0.06320267,0.1004281,0.06631455,No,No,No,"Work with teachers: while they explain, we ask them"
+55,a10e,Student questionnaire,Categorical,0.14238864,0.1160253,1,0.08124807,0.06417625,1,0.05907301,0.06259496,0.10067993,0.06631455,No,No,No,Work with teachers: we make debates
+56,a10f,Student questionnaire,Categorical,0.13108174,0.10945874,0.06589631,0.08124807,0.06417625,1,0.05998182,0.06320267,0.10047847,0.06660798,No,No,No,Work with teachers: we do exercises
+57,a10g,Student questionnaire,Categorical,0.13636809,0.1119212,0.06589631,0.08124807,0.06417625,1,0.05967889,0.06289881,0.10133468,0.06631455,No,No,No,Work with teachers: we work individually
+58,a10h,Student questionnaire,Categorical,0.14557024,0.11776351,0.06589631,0.08124807,0.06417625,0.0556231,0.05998182,0.06381039,0.10123395,0.06748826,No,No,No,Work with teachers: we work in small groups
+59,a10i,Student questionnaire,Categorical,0.14904552,0.11993627,1,0.08124807,0.06417625,1,0.06028476,0.06259496,0.10198942,0.06719484,No,No,No,Work with teachers: we take notes
+60,a10j,Student questionnaire,Categorical,0.13984337,0.11327314,0.06589631,0.08124807,0.06417625,1,0.05998182,0.06411425,0.10148577,0.06778169,No,No,No,Work with teachers: we study individually and then they ask us
+61,a10k,Student questionnaire,Categorical,0.14140969,0.11409396,1,1,1,1,1,1,1,1,No,No,No,Work with teachers: They introduce the activitities
+62,a10l,Student questionnaire,Categorical,0.13680861,0.11090725,1,1,1,1,1,1,1,1,No,No,No,Work with teachers: they make us feel good
+63,a10m,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.0622911,1,0.0689554,No,No,No,Work with teachers: I listen to the explanation
+64,a10n,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.06259496,1,0.06719484,No,No,No,Work with teachers: I understand what they explain
+65,a11a,Student questionnaire,Categorical,0.12280959,0.10762397,0.06589631,0.08124807,0.06417625,0.05653495,0.05967889,0.06411425,0.10168723,0.06807512,No,No,No,Materials in class: textbook
+66,a11b,Student questionnaire,Categorical,0.13073911,0.11505963,0.06589631,0.08124807,0.06417625,0.06443769,0.06028476,0.06441811,0.10380257,0.06807512,No,No,No,Materials in class: library books
+67,a11c,Student questionnaire,Categorical,0.13954968,0.12008112,0.06589631,0.08124807,0.06417625,0.06413374,0.06028476,0.06502583,0.10365147,0.06866197,No,No,No,Materials in class: newspapers or magazines
+68,a11d,Student questionnaire,Categorical,0.14473813,0.12032253,0.06589631,0.08124807,0.06417625,0.06170213,0.06028476,0.06259496,0.10133468,0.06866197,No,No,No,Materials in class: computers or tablets
+69,a11e,Student questionnaire,Categorical,0.13592756,0.11525276,0.06589631,0.08124807,0.06417625,0.06261398,0.06028476,0.06532969,0.10360111,0.06836854,No,No,No,Materials in class: videos
+70,a11f,Student questionnaire,Categorical,0.13592756,0.11650814,0.06589631,0.08124807,1,1,0.06028476,1,0.10370184,1,No,No,No,Materials in class: school agenda
+71,a11g,Student questionnaire,Categorical,0.13622124,0.11645985,1,1,1,1,1,1,1,1,No,No,No,Materials in class: material prepared by the teacher
+72,a11h,Student questionnaire,Categorical,0.13181596,0.11182463,0.06589631,0.08124807,0.06417625,0.05653495,0.05967889,0.06320267,0.10178796,0.06836854,No,No,No,Materials in class: digital whiteboard
+73,a12a,Student questionnaire,Categorical,0.12486539,0.11114866,1,0.08124807,0.06417625,1,0.06119358,0.06563355,0.11029967,0.06983568,No,No,No,Evaluation: They ask us about what we know before starting a topic
+74,a12b,Student questionnaire,Categorical,0.1268233,0.10796195,1,0.08124807,0.06417625,1,0.06119358,0.06532969,0.10999748,0.06954225,No,No,No,Evaluation: We are examined after each topic
+75,a12c,Student questionnaire,Categorical,0.13675967,0.11945343,1,0.08124807,0.06417625,1,0.06240533,0.06532969,0.11105515,0.07012911,No,No,No,Evaluation: We have a single exam in each trimester
+76,a12d,Student questionnaire,Categorical,0.1350465,0.11684612,1,0.08124807,0.06417625,1,0.06210239,0.06563355,0.11085369,0.06983568,No,No,No,Evaluation: They correct our homework and notebooks
+77,a12e,Student questionnaire,Categorical,0.13636809,0.11718411,1,0.08124807,0.06417625,1,0.06210239,0.06532969,0.11140771,0.07071596,No,No,No,Evaluation: They review the activities that we do in class
+78,a12f,Student questionnaire,Categorical,0.14033284,0.11645985,1,0.08124807,0.06417625,1,0.06210239,0.06563355,0.11140771,0.06983568,No,No,No,Evaluation: We have oral exams
+79,a12g,Student questionnaire,Categorical,0.13837494,0.11708754,1,0.08124807,0.06417625,1,0.06179945,0.06593741,0.11201209,0.07071596,No,No,No,Evaluation: They take into account our self-evaluation
+80,a12h,Student questionnaire,Categorical,0.13553598,0.11196948,1,0.08124807,0.06417625,1,0.06149652,0.06532969,0.11160917,0.07042254,No,No,No,Evaluation: They value interest and participation in class
+81,a12i,Student questionnaire,Categorical,0.13641703,0.1122109,1,0.08124807,0.06417625,1,0.06149652,0.06563355,0.1117099,0.07071596,No,No,No,Evaluation: Our behavior influences the scores
+82,a13a,Student questionnaire,Categorical,0.12104748,0.1075274,1,1,1,1,1,1,1,1,No,No,No,Degree of agreement: We get along  with teachers
+83,a13b,Student questionnaire,Categorical,0.12755751,0.10878277,1,1,1,1,1,1,1,1,No,No,No,Degree of agreement: Teachers care about us
+84,a13c,Student questionnaire,Categorical,0.13000489,0.11187292,1,1,1,1,1,1,1,1,No,No,No,Degree of agreement: Teachers listen to us
+85,a13d,Student questionnaire,Categorical,0.13245228,0.11303172,1,1,1,1,1,1,1,1,No,No,No,Degree of agreement: I receive help from my teachers
+86,a13e,Student questionnaire,Categorical,0.1319628,0.11245232,0.06589631,0.08124807,0.06417625,1,0.0605877,0.06016408,0.10712667,0.06396714,No,No,No,Degree of agreement: The teachers are fair
+87,a14a,Student questionnaire,Categorical,0.11899168,0.10805852,0.06589631,0.08124807,0.06417625,0.0550152,0.05967889,0.05925251,0.1039033,0.06455399,No,Yes,No,Degree of agreement: I make friends easily
+88,a14b,Student questionnaire,Categorical,0.13543808,0.11617015,0.06589631,0.08124807,0.06417625,1,0.05998182,0.05986022,0.10440695,0.06484742,No,Yes,No,Degree of agreement: I feel comfortable with my classmates
+89,a14c,Student questionnaire,Categorical,0.160744,0.14320892,1,1,1,1,1,1,1,1,No,Yes,No,Degree of agreement: I feel alone
+90,a14d,Student questionnaire,Categorical,0.13622124,0.11747381,0.06589631,0.08124807,0.06417625,1,0.06028476,1,0.10531352,1,No,Yes,No,Degree of agreement: My classmates leave me out of their games
+91,a14e,Student questionnaire,Categorical,0.1318649,0.11312829,0.06589631,0.08124807,0.06417625,1,0.05998182,0.05955637,0.10541425,0.06543427,No,Yes,No,Degree of agreement: I am afraid of my classmates
+92,a14f,Student questionnaire,Categorical,0.13235438,0.1122109,0.06589631,0.08124807,0.06417625,1,0.06028476,0.05955637,0.10576681,0.06455399,No,Yes,No,Degree of agreement: The attitude of my classmates towards me bothers me
+93,a14g,Student questionnaire,Categorical,0.13117964,0.11322486,0.06589631,0.08124807,1,1,0.05998182,1,0.10702594,1,No,Yes,No,Degree of agreement: I like to be with my classmates
+94,a14h,Student questionnaire,Categorical,0.13215859,0.11095553,0.06589631,0.08124807,0.06417625,0.05896657,0.05998182,0.05986022,0.1059179,0.06514085,No,Yes,No,Degree of agreement: My classmates help me in class
+95,a15a,Student questionnaire,Categorical,0.12354381,0.11201777,0.06589631,0.08124807,1,1,0.06089064,1,0.10858726,1,No,No,No,Degree of agreement: I know what my teachers expect me to do
+96,a15b,Student questionnaire,Categorical,0.12506118,0.10825165,0.06589631,0.08124807,1,0.05258359,0.06028476,1,0.10843616,1,No,No,No,Degree of agreement: It is easy to understand my teachers
+97,a15c,Student questionnaire,Categorical,0.12853647,0.11211434,0.06589631,0.08124807,1,1,0.06089064,1,0.10888945,1,No,No,No,Degree of agreement: I am interested in what my teachers say
+98,a15d,Student questionnaire,Categorical,0.13020069,0.11283859,0.06589631,0.08124807,1,0.0550152,0.06089064,1,0.10893981,1,No,No,No,Degree of agreement: My teachers propose interesting things
+99,a15e,Student questionnaire,Categorical,0.12834068,0.10883106,0.06589631,0.08124807,1,1,0.06089064,1,0.109242,1,No,No,No,Degree of agreement: My teachers clearly answer my questions
+100,a15f,Student questionnaire,Categorical,0.12726383,0.10936217,0.06589631,0.08124807,1,0.05714286,0.06089064,1,0.10934273,1,No,No,No,Degree of agreement: My teachers are good at explaining
+101,a15g,Student questionnaire,Categorical,0.13005384,0.1110521,0.06589631,0.08124807,1,1,0.06089064,1,0.10969529,1,No,No,No,Degree of agreement: My teachers let me demonstrate what I have learned
+102,a15h,Student questionnaire,Categorical,0.13010279,0.11245232,0.06589631,0.08124807,1,1,0.06089064,1,0.10964493,1,No,No,No,Degree of agreement: My teachers do different things to help us learn
+103,a15i,Student questionnaire,Categorical,0.13054332,0.1119212,0.06589631,0.08124807,1,0.05410334,0.06119358,1,0.10969529,1,No,No,No,Degree of agreement: My teachers tell me how to improve when I am wrong
+104,a15j,Student questionnaire,Categorical,0.13352912,0.11370769,0.06589631,0.08124807,1,1,0.06119358,1,0.11009821,1,No,No,No,Degree of agreement: My teachers listen to me
+105,a16a,Student questionnaire,Categorical,0.11997063,0.10868621,1,1,1,1,1,1,1,1,No,No,No,Degree of agreement: The activities are fun
+106,a16b,Student questionnaire,Categorical,0.12501224,0.11182463,0.06589631,0.08124807,0.06417625,0.0556231,0.05998182,0.06320267,0.10350038,0.06748826,No,No,No,Degree of agreement: The teacher is happy with the group
+107,a16c,Student questionnaire,Categorical,0.12608908,0.11143837,0.06589631,0.08124807,0.06417625,0.05744681,0.06028476,0.06381039,0.10420549,0.06836854,No,No,No,Degree of agreement: Students participate in decision-making
+108,a16d,Student questionnaire,Categorical,0.12853647,0.11341799,1,1,0.06417625,1,1,1,1,1,No,No,No,Degree of agreement: Students help each other
+109,a16e,Student questionnaire,Categorical,0.12966226,0.11351456,0.06589631,0.08124807,0.06417625,0.05683891,0.05998182,0.06411425,0.10435659,0.06807512,No,No,No,Degree of agreement: In my class they respect me and I feel safe
+110,a16f,Student questionnaire,Categorical,0.1287812,0.11361112,0.06589631,0.08124807,1,0.05471125,0.06028476,1,0.10480987,1,No,No,No,Degree of agreement: I like the organization and decoration of my class
+111,a16g,Student questionnaire,Categorical,0.12873226,0.11259717,0.06589631,0.08124807,1,0.05531915,0.05998182,1,0.10430622,1,No,No,No,Degree of agreement: I really like working in class
+112,a16h,Student questionnaire,Categorical,0.12922173,0.11327314,0.06589631,0.08124807,0.06417625,0.05987842,0.06028476,0.05986022,0.10637119,0.06514085,No,No,No,Degree of agreement: In class there is a good working environment
+113,a16i,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.06381039,1,0.06778169,No,No,No,Degree of agreement: I really like the work in mathematics
+114,a16j,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.06350653,1,0.06748826,No,No,No,Degree of agreement:  I really like the spanish language work
+115,a16k,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,0.06119358,1,0.11191136,1,No,No,No,Degree of agreement: I really like the english work
+116,a16l,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.06350653,1,0.06719484,No,No,No,Degree of agreement: I really like the work in geography and history
+117,a17a,Student questionnaire,Categorical,0.11669114,0.10443726,0.06589631,0.08124807,0.06417625,1,0.05998182,0.05986022,0.10763032,0.06426056,No,No,No,Degree of agreement: In my school there are appropriate rules/norms
+118,a17b,Student questionnaire,Categorical,0.12173275,0.10661001,1,1,1,1,1,1,1,1,No,Yes,No,Degree of agreement: My school is very good
+119,a17c,Student questionnaire,Categorical,0.12922173,0.11187292,0.06589631,0.08124807,0.06417625,1,0.05998182,0.05894865,0.10586754,0.06367371,No,Yes,No,Degree of agreement: I like being in this school
+120,a17d,Student questionnaire,Categorical,0.12662751,0.11013471,0.06589631,0.08124807,0.06417625,1,0.06028476,0.06016408,0.10763032,0.06426056,No,Yes,No,Degree of agreement: I would like to change to other school
+121,a17e,Student questionnaire,Categorical,0.12995595,0.11124523,0.06589631,0.08124807,0.06417625,1,0.06028476,0.05925251,0.10632083,0.06455399,No,Yes,No,Degree of agreement: I feel safe in this school
+122,a17f,Student questionnaire,Categorical,0.13162017,0.11390083,0.06589631,0.08124807,0.06417625,1,0.06028476,0.05925251,0.10662302,0.06455399,No,Yes,No,Degree of agreement: I feel part of this school
+123,a17g,Student questionnaire,Categorical,0.12530592,0.10868621,0.06589631,0.08124807,0.06417625,1,0.06028476,0.0607718,0.10732813,0.06426056,No,Yes,No,Degree of agreement: I am proud to go to this school
+124,a17h,Student questionnaire,Categorical,0.12667646,0.10854135,0.06589631,0.08124807,1,1,0.06028476,1,0.10803324,1,No,Yes,No,Degree of agreement: I learn a lot at school
+125,a20a,Student questionnaire,Categorical,1,1,0.06589631,0.08124807,1,0.056231,0.06210239,1,0.11150844,1,No,Yes,No,Degree of agreement: I am a good student in mathematics
+126,a20b,Student questionnaire,Categorical,1,1,0.06589631,0.08124807,1,1,1,1,1,1,No,Yes,No,Degree of agreement: I wish I did not have mathematics
+127,a20c,Student questionnaire,Categorical,1,1,0.06589631,0.08124807,1,0.05835866,0.06210239,1,0.11191136,1,No,Yes,No,Degree of agreement: Mathematics is more difficult for me than for my classmates
+128,a20d,Student questionnaire,Categorical,1,1,0.06589631,0.08124807,1,0.056231,0.06210239,1,0.11226391,1,No,Yes,No,Degree of agreement: Mathematics is more difficult than other subjects
+129,a20e,Student questionnaire,Categorical,1,1,0.06589631,0.08124807,1,0.05714286,0.06179945,1,0.11176026,1,No,Yes,No,Degree of agreement: I like studying in the math class
+130,a21a,Student questionnaire,Categorical,1,1,0.06589631,0.08124807,1,1,1,1,1,1,No,Yes,No,Degree of agreement: I read because I have to
+131,a21b,Student questionnaire,Categorical,1,1,0.06589631,0.08124807,1,0.056231,0.06179945,1,0.11135734,1,No,Yes,No,Degree of agreement: I read very well
+132,a21c,Student questionnaire,Categorical,1,1,0.06589631,0.08124807,1,0.05866261,0.06179945,1,0.11231428,1,No,Yes,No,Degree of agreement: Language is more difficult for me than for my classmates
+133,a21d,Student questionnaire,Categorical,1,1,0.06589631,0.08124807,1,1,1,1,1,1,No,Yes,No,Degree of agreement: It is difficult for me to read
+134,a21e,Student questionnaire,Categorical,1,1,0.06589631,0.08124807,1,0.05683891,0.06210239,1,0.1127172,1,No,Yes,No,Degree of agreement: Language is more difficult than other subjects
+135,a22a,Student questionnaire,Categorical,1,1,1,0.08124807,1,1,0.06149652,1,0.11165953,1,No,Yes,No,Degree of agreement: I am a good student in Natural Sciences
+136,a22b,Student questionnaire,Categorical,1,1,1,0.08124807,1,1,1,1,1,1,No,Yes,No,Degree of agreement: I wish I dit not have Nature Sciences
+137,a22c,Student questionnaire,Categorical,1,1,1,0.08124807,1,1,0.06179945,1,0.11266683,1,No,Yes,No,Degree of agreement: Natural Sciences is more difficult for me than for my classmates
+138,a22d,Student questionnaire,Categorical,1,1,1,0.08124807,1,1,0.06149652,1,0.11281793,1,No,Yes,No,Degree of agreement: Natural Sciences is more difficult than other subjects
+139,a23a,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.06654512,1,0.07159624,No,Yes,No,Degree of agreement: I am concerned that the written tests are difficult
+140,a23b,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.06654512,1,0.07130282,No,Yes,No,Degree of agreement: In the written tests I feel very nervous
+141,a23c,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.06806442,1,0.07130282,No,Yes,No,Degree of agreement: I want to have the best scores in my class
+142,a23d,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.06715284,1,0.07188967,No,Yes,No,Degree of agreement: I want to have the best scores possible
+143,a23e,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.06776056,1,0.07306338,No,No,No,Degree of agreement: I prefer to work individually than in a group
+144,a23f,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,1,1,1,No,No,No,Degree of agreement: I listen to others
+145,a23g,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.06776056,1,0.0721831,No,No,No,Degree of agreement: I like to know different points of view
+146,a23h,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.06836828,1,0.07276995,No,No,No,Degree of agreement: I take into account the opinions and interests of my classmates
+147,a23i,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,1,1,1,No,No,No,Degree of agreement: I like cooperative work
+148,a23j,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.0674567,1,0.07276995,No,No,No,Degree of agreement: Better decisions are taken in a group than individually
+149,a23k,Student questionnaire,Categorical,1,1,1,1,1,1,1,0.06806442,1,0.07247653,No,Yes,No,Degree of agreement: I am happy with the scores I have
+150,a24,Student questionnaire,Categorical,1,1,1,1,0.08429119,1,1,0.06867214,1,0.07247653,Yes,Yes,No,Studies that I will do next year
+151,a40a,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.05925251,1,0.06514085,No,Yes,No,Degree of agreement: I use social media networks with my classmates
+152,a40b,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.05925251,1,0.06543427,No,Yes,No,Degree of agreement: I am affected by the use of social media networks in my day-to-day life at the school
+153,a40c,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.05955637,1,0.06602113,No,Yes,No,Degree of agreement: I have ever felt hurt on social media networks
+154,a40d,Student questionnaire,Categorical,1,1,1,1,1,1,1,0.05986022,1,0.06602113,No,Yes,No,Degree of agreement: I dedicate a lot of time in my day to day to the use of social media networks
+155,a41,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.0674567,1,0.0786385,Yes,Yes,No,I repeated in primary education
+156,a42,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.06411425,1,0.06983568,Yes,Yes,No,I repeated in secondary education
+157,a51,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.05894865,1,0.06191315,No,Yes,No,Unexcused absences during trimester
+158,a61,Student questionnaire,Categorical,0.38986784,0.24624596,0.43347908,0.2347853,0.06417625,1,1,0.05712549,1,0.06191315,No,Yes,No,Homework hours per week
+159,a71,Student questionnaire,Categorical,1,1,1,1,1,1,0.05786125,1,0.09947117,1,No,Yes,No,Homework time per day
+160,a111a,Student questionnaire,Categorical,1,1,1,1,1,0.06291793,0.05998182,1,0.10284563,1,No,No,No,Degree of agreement: Use of activity booklet
+161,a141g,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.05955637,1,0.06338028,No,No,No,Degree of agreement: I have a good relationship with my classmates
+162,a144d,Student questionnaire,Categorical,1,1,1,1,1,1,1,0.06046794,1,0.06484742,No,No,No,Degree of agreement: My classmates leave me out of their conversations
+163,a144h,Student questionnaire,Categorical,1,1,1,1,1,1,1,0.06350653,1,0.06748826,No,No,No,Degree of agreement: We help each other in class
+164,a160k,Student questionnaire,Categorical,1,1,1,1,1,1,0.06119358,1,0.11196172,1,No,Yes,No,Degree of agreement: I am a good student in English
+165,a162k,Student questionnaire,Categorical,1,1,1,1,1,1,0.06149652,1,0.11276756,1,No,Yes,No,Degree of agreement: English is more difficult for me than for my classmates
+166,a163k,Student questionnaire,Categorical,1,1,1,1,1,1,0.06119358,1,0.11312012,1,No,Yes,No,Degree of agreement: English is more difficult than other subjects
+167,a166f,Student questionnaire,Categorical,1,1,1,1,1,0.0550152,1,1,1,1,No,Yes,No,Degree of agreement: Some classmate treats me badly
+168,a166k,Student questionnaire,Categorical,1,1,1,1,1,1,1,0.06350653,1,0.06748826,No,Yes,No,Degree of agreement: I like the work I do in English classes and I find it interesting
+169,a171h,Student questionnaire,Categorical,1,1,1,1,0.06417625,1,1,0.05986022,1,0.06455399,No,Yes,No,Degree of agreement: The education I receive is good
+170,a177d,Student questionnaire,Categorical,1,1,1,1,1,0.05714286,1,1,1,1,No,Yes,No,Degree of agreement: I would like to change to other class group
+171,a211a,Student questionnaire,Categorical,1,1,1,1,1,0.06109422,0.06179945,1,0.1115588,1,No,Yes,No,Degree of agreement: I like to read
+172,a222b,Student questionnaire,Categorical,1,1,1,1,1,1,0.06149652,1,0.11196172,1,No,Yes,No,Degree of agreement: I like studying Natural Sciences
+173,country_iso_cnac,Student questionnaire,Categorical,1,1,0.09306683,0.14457831,0.14974457,0.06595745,0.10209028,0.10665451,1,1,Yes,Yes,No,Birth country ISO
+174,country_iso_nac,Student questionnaire,Categorical,1,1,0.08276077,0.11986407,0.11206897,0.05349544,0.06331415,0.07961106,1,1,Yes,Yes,No,Nationality country ISO
+175,Weight,Student questionnaire,Continuous,1,1,0,0,0,0,0,0,1,0.06132629,No,No,No,Weight for the sample observations
+176,d1,School principals questionnaire,Categorical,0.09050416,0.07614311,1,1,1,0.07902736,0.08633747,0.07353388,0.13885671,0.08098592,No,No,No,Sex
+177,d2n,School principals questionnaire,Continuous,0.09314733,0.07913669,0.06527171,0.10441767,0.12771392,0.07902736,0.10693729,0.07353388,0.14021657,0.08098592,No,No,No,Age
+178,d3n,School principals questionnaire,Continuous,0.09916789,0.08512385,0.06527171,0.10441767,0.12771392,0.07902736,0.10693729,0.07353388,0.14021657,0.08098592,No,No,No,Year of teaching experience
+179,d4n,School principals questionnaire,Continuous,0.09471366,0.08015064,0.06527171,0.10441767,0.12771392,0.07902736,0.10693729,0.07353388,0.14021657,0.08098592,No,No,No,Years in the school
+180,d5n,School principals questionnaire,Continuous,0.1030837,0.08869683,0.06527171,0.10441767,0.12771392,0.07902736,0.10269615,0.07353388,0.14021657,0.08098592,No,No,No,Years of experience as a principal
+181,d6n,School principals questionnaire,Continuous,0.09598629,0.08077833,0.06527171,0.10441767,0.12771392,0.07902736,0.10693729,0.07353388,0.13890708,0.08098592,No,No,No,Years of experience as a principal in the school
+182,d7n,School principals questionnaire,Continuous,0.13768967,0.1239438,0.24297314,0.25980846,0.15836526,0.07902736,0.09057861,0.07353388,0.13890708,0.08098592,No,No,No,Number of weekly class hours 
+183,d8n,School principals questionnaire,Continuous,0.09926579,0.08338564,0.06527171,0.10441767,0.12771392,0.07902736,0.10693729,0.07353388,0.13890708,0.08098592,No,No,No,Principals that the center has had in the last 10 years
+184,d9a1,School principals questionnaire,Continuous,0.28076358,0.27352615,0.06527171,0.10441767,0.12771392,0.07902736,0.08633747,0.07353388,1,1,No,No,No,Total number of students
+185,d9a2,School principals questionnaire,Continuous,0.26324033,0.25208826,0.08338538,0.10441767,0.12771392,0.07902736,0.12541654,0.07353388,1,1,No,No,No,Total number of groups
+186,d9b1,School principals questionnaire,Continuous,0.10744004,0.09202839,0.07526546,0.11368551,0.79501916,0.07902736,0.10269615,0.79945305,1,1,No,No,No,Total number of preschool students
+187,d9b2,School principals questionnaire,Continuous,0.11605482,0.10110569,0.21736415,0.29935125,0.79501916,0.21732523,0.25598304,0.79945305,1,1,No,No,No,Total number of preschool groups
+188,d9c1,School principals questionnaire,Continuous,0.09603524,0.08217855,0.06527171,0.10441767,0.79501916,0.07902736,0.08633747,0.79945305,1,1,No,No,No,Total number of primary education students
+189,d9c2,School principals questionnaire,Continuous,0.11223691,0.09584279,0.17145534,0.26475131,0.79501916,0.2006079,0.1975159,0.79276816,1,1,No,No,No,Total number of primary education groups
+190,d9d1,School principals questionnaire,Continuous,0.10499266,0.09859495,0.06527171,1,1,0.07902736,1,1,1,1,No,No,No,Total number of 3rd grade students
+191,d9d2,School principals questionnaire,Continuous,0.13817915,0.12529574,0.06527171,1,1,0.07902736,1,1,1,1,No,No,No,Total number of 3rd grade groups
+192,d9e1,School principals questionnaire,Continuous,0.11762115,0.09671189,1,0.10441767,1,1,0.08633747,1,1,1,No,No,No,Total number of 6th grade students
+193,d9e2,School principals questionnaire,Continuous,0.14307391,0.12022597,1,0.10441767,1,1,0.08633747,1,1,1,No,No,No,Total number of 6th grade groups
+194,d9f1,School principals questionnaire,Continuous,0.77376407,0.7650041,0.79544035,0.79610751,0.12771392,0.71550152,0.76128446,0.07353388,1,1,No,No,No,Total number of mandadory secondary education students
+195,d9f2,School principals questionnaire,Continuous,0.78179148,0.77243977,0.79544035,0.79610751,0.13888889,0.71550152,0.76128446,0.07353388,1,1,No,No,No,Total number of mandadory secondary education groups
+196,d9g1,School principals questionnaire,Continuous,0.99353891,0.99270919,1,1,1,1,1,1,1,1,No,No,No,Total number of students in Qualification Programs
+197,d9g2,School principals questionnaire,Continuous,0.99216838,0.9917918,1,1,1,1,1,1,1,1,No,No,No,Total number of groups in Qualification Programs
+198,d9h1,School principals questionnaire,Continuous,1,1,1,1,0.12771392,1,1,0.07353388,1,1,No,No,No,Total number of 4th grade of mandatory secondary education students
+199,d9h2,School principals questionnaire,Continuous,1,1,1,1,0.12771392,1,1,0.07353388,1,1,No,No,No,Total number of 4th grade of mandatory secondary education groups
+200,d10a,School principals questionnaire,Continuous,0.09021047,0.07469461,0.06527171,1,1,0.07902736,1,1,1,1,No,Yes,No,3rd grade ratio
+201,d10b,School principals questionnaire,Continuous,0.08923152,0.07421177,1,0.10441767,1,1,0.08633747,1,1,1,No,Yes,No,6th grade ratio
+202,d10c,School principals questionnaire,Continuous,1,1,1,1,0.12771392,1,1,0.07353388,1,1,No,Yes,No,4th grade of mandatory secondary ESO Ratio
+203,d11an,School principals questionnaire,Continuous,0.15638767,0.14166385,0.06527171,0.10441767,0.12771392,0.07902736,0.12056952,0.07353388,0.14736842,0.08098592,No,No,No,Students born in another country with a language  other than Spanish
+204,d11bn,School principals questionnaire,Continuous,0.1743025,0.16078412,0.11930044,0.13438369,0.14814815,0.07902736,0.12056952,0.07353388,0.15295895,0.08098592,No,No,No,Students born in another country with the same language  as Spanish
+205,d12an,School principals questionnaire,Continuous,0.10171317,0.08734489,1,1,1,1,1,1,1,1,No,No,No,Teachers of the evaluated grade
+206,d12bn,School principals questionnaire,Continuous,0.09676946,0.08164743,0.06527171,0.10441767,0.12771392,0.07902736,0.10693729,0.07353388,0.1559305,0.0991784,No,No,No,Total teachers of the school
+207,d13n,School principals questionnaire,Continuous,0.1165443,0.10149196,1,1,1,1,1,1,1,1,No,No,No,"Among the teachers, how many have been in the school five or more years?"
+208,d14,School principals questionnaire,Categorical,0.09197259,0.07672251,0.06527171,0.10441767,0.12771392,0.07902736,0.10693729,0.07353388,0.15074289,0.08098592,No,Yes,No,Teachers who change school each year
+209,d15,School principals questionnaire,Categorical,0.09755262,0.08439959,0.06527171,0.10441767,0.12771392,0.07902736,0.10693729,0.07353388,0.15074289,0.08098592,No,No,No,Administration attitude to teacher training courses
+210,d16an,School principals questionnaire,Continuous,0.11350954,0.0990295,0.06527171,0.10441767,0.12771392,0.09483283,0.11087549,0.07353388,0.16006044,0.08098592,No,No,No,School resources. Available computers
+211,d16bn,School principals questionnaire,Continuous,0.10048948,0.08662064,0.06527171,0.10441767,0.12771392,0.09483283,0.11087549,0.07353388,0.16041299,0.08098592,No,No,No,School resources. Computers available to students
+212,d16cn,School principals questionnaire,Continuous,0.09549682,0.08082661,0.06527171,0.10441767,0.12771392,0.09483283,0.11087549,0.07353388,0.16121884,0.08098592,No,No,No,School resources. Computers available for teachers
+213,d16dn,School principals questionnaire,Continuous,0.09197259,0.07773647,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.16006044,0.08098592,No,No,No,School resources. Computers for the administrative management of the school
+214,d16en,School principals questionnaire,Continuous,1,1,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.1602619,0.08098592,No,No,No,School resources. Tablets/laptops available to students
+215,d16fn,School principals questionnaire,Continuous,1,1,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.1591035,0.08098592,No,No,No,School resources. Interactive digital whiteboards or touch screens in classrooms
+216,d17a,School principals questionnaire,Categorical,0.09348997,0.07812274,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,No,No,Factors that limit the effectiveness of my management. Lack of budget and resources
+217,d17b,School principals questionnaire,Categorical,0.09951052,0.08507556,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,No,No,Factors that limit the effectiveness of my management. Lack of attendance of the teachers
+218,d17c,School principals questionnaire,Categorical,0.0978463,0.08241997,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,No,No,Factors that limit the effectiveness of my management. Lack of participation and support of families
+219,d17d,School principals questionnaire,Categorical,0.09300049,0.07802617,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,No,No,Factors that limit the effectiveness of my management. Lack of teacher training plan in my school for teachers
+220,d17e,School principals questionnaire,Categorical,0.09632893,0.08077833,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,No,No,Factors that limit the effectiveness of my management. Lack of opportunities/support for professional development of the management team
+221,d17f,School principals questionnaire,Categorical,0.09427313,0.07889527,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15658524,0.08098592,No,No,No,Factors that limit the effectiveness of my management. Lack of agility to cover teacher absences
+222,d17g,School principals questionnaire,Categorical,0.09363681,0.0782193,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.1580962,0.08098592,No,No,No,Factors that limit the effectiveness of my management. Lack of coordination between members of the management team
+223,d17h,School principals questionnaire,Categorical,0.0927068,0.07812274,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15648451,0.08098592,No,No,No,Factors that limit the effectiveness of my management. Lack of autonomy to make decisions
+224,d18a,School principals questionnaire,Categorical,0.09495839,0.07889527,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,Yes,No,It is an inconvenience in your school: Lack of good/qualified teachers
+225,d18b,School principals questionnaire,Categorical,0.09363681,0.07783304,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,Yes,No,It is an inconvenience in your school: Lack of teachers trained to teach students with special educational needs
+226,d18c,School principals questionnaire,Categorical,0.09676946,0.08179228,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,Yes,No,It is an inconvenience in your school: Lack or inadequate teaching material
+227,d18d,School principals questionnaire,Categorical,0.10063632,0.0861378,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,Yes,No,It is an inconvenience in your school: Lack or inadequacy of technological devices for teaching
+228,d18e,School principals questionnaire,Categorical,0.09285365,0.07691565,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,Yes,No,It is an inconvenience in your school: Poor internet connection
+229,d18f,School principals questionnaire,Categorical,0.09094469,0.07599826,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,Yes,No,It is an inconvenience in your school: Lack or inadequacy of software for teaching
+230,d18g,School principals questionnaire,Categorical,0.09133627,0.07614311,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15497356,0.08098592,No,Yes,No,It is an inconvenience in your school: Lack or inadequacy of library materials
+231,d18h,School principals questionnaire,Categorical,0.09627998,0.08130945,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,Yes,No,It is an inconvenience in your school: Lack of support teachers
+232,d18i,School principals questionnaire,Categorical,0.0916789,0.07701222,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,Yes,No,It is an inconvenience in your school: Lack of administrative staff
+233,d18j,School principals questionnaire,Categorical,0.0968184,0.08179228,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,Yes,No,It is an inconvenience in your school: Lack of adequate infrastructure
+234,d18k,School principals questionnaire,Categorical,0.09055311,0.07522573,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15502392,0.0991784,No,Yes,No,It is an inconvenience in your school: Lack of teacher collaboration
+235,d18l,School principals questionnaire,Categorical,0.09187469,0.07730192,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15708889,0.0991784,No,Yes,No,It is an inconvenience in your school: Lack of collaboration from families
+236,d18m,School principals questionnaire,Categorical,0.09133627,0.07739848,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15502392,0.0991784,No,Yes,No,It is an inconvenience in your school: Administrative bureaucracy
+237,d18n,School principals questionnaire,Categorical,1,1,1,1,1,0.08237082,0.11087549,0.08629596,0.15502392,0.0991784,No,Yes,No,It is an inconvenience in your school: Lack of computers in the classroom or for students.
+238,d19a,School principals questionnaire,Categorical,0.09016153,0.07503259,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15502392,0.0991784,No,No,No,It is a problem in your school because of the students: Arriving late to the school
+239,d19b,School principals questionnaire,Categorical,0.09079785,0.07604655,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15502392,0.0991784,No,No,No,It is a problem in your school because of the students: Absenteeism (unexcused absences)
+240,d19c,School principals questionnaire,Categorical,0.09451787,0.07981266,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15502392,0.0991784,No,No,No,It is a problem in your school because of the students: Disruption of order in class
+241,d19d,School principals questionnaire,Categorical,0.09520313,0.08164743,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15653488,0.0991784,No,No,No,It is a problem in your school because of the students: Vandalism and theft
+242,d19e,School principals questionnaire,Categorical,0.09838473,0.0814543,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15502392,0.0991784,No,No,No,It is a problem in your school because of the students: Inappropriate or profanity language
+243,d19f,School principals questionnaire,Categorical,0.09495839,0.08048863,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15502392,0.0991784,No,No,No,It is a problem in your school because of the students: Intimidation or insults between students or another type of bullying
+244,d19g,School principals questionnaire,Categorical,0.08923152,0.07421177,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15502392,0.0991784,No,No,No,It is a problem in your school because of the students: Physical aggressions between students
+245,d19h,School principals questionnaire,Categorical,0.08932942,0.07426006,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15502392,0.0991784,No,No,No,It is a problem in your school because of the students: Lack of respect to teachers
+246,d19i,School principals questionnaire,Categorical,0.09304944,0.07870214,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15653488,0.0991784,No,No,No,It is a problem in your school because of the students: Intimidation or insults to the teachers or staff of the school
+247,d19j,School principals questionnaire,Categorical,0.09451787,0.07768819,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15653488,0.0991784,No,No,No,It is a problem in your school because of the teachers: Arriving late to the school
+248,d19k,School principals questionnaire,Categorical,0.09672051,0.08000579,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15653488,0.0991784,No,No,No,It is a problem in your school because of the teachers: absenteeism (unexcused absences)
+249,d19l,School principals questionnaire,Categorical,0.10053842,0.08319251,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15915387,0.0991784,No,No,No,It is a problem in your school because of the teachers: Lack of respect towards the students
+250,d19m,School principals questionnaire,Categorical,0.09672051,0.08000579,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15653488,0.0991784,No,No,No,It is a problem in your school because of the teachers: Lack of respect between teachers
+251,d19n,School principals questionnaire,Categorical,0.09740578,0.0802955,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15653488,0.0991784,No,No,No,It is a problem in your school because of the teachers: Discrimination based on sex
+252,d19o,School principals questionnaire,Categorical,0.09197259,0.07696393,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15653488,0.0991784,No,No,No,It is a problem in your school because of the families: Lack of collaboration with the school
+253,d19p,School principals questionnaire,Categorical,0.09197259,0.07696393,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15653488,0.0991784,No,No,No,It is a problem in your school because of the families: Criticism and opposition to the rules of the school
+254,d19q,School principals questionnaire,Categorical,0.09241312,0.07739848,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15653488,0.0991784,No,No,No,It is a problem in your school because of the families: Lack of respect towards the teachers and staff of the school
+255,d19r,School principals questionnaire,Categorical,0.09329418,0.07826759,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15653488,0.0991784,No,No,No,It is a problem in your school because of the families: Lack of respect or discrimination towards other families
+256,d20a,School principals questionnaire,Categorical,0.09172785,0.07667423,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15406699,0.0991784,No,No,No,To what extent does the management of the school: Helps to establish good relations between teachers
+257,d20b,School principals questionnaire,Categorical,0.08923152,0.07421177,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15406699,0.0991784,No,No,No,To what extent does the management of the school: Take into account the opinions of the teaching staff
+258,d20c,School principals questionnaire,Categorical,0.09295154,0.07720535,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15406699,0.0991784,No,No,No,To what extent does the management of the school: Stimulate teachers to develop innovative ideas
+259,d20d,School principals questionnaire,Categorical,0.09388155,0.07908841,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15406699,0.0991784,No,No,No,To what extent does the management of the school: Create a strong sense of identity in the community with the objectives of the school
+260,d20e,School principals questionnaire,Categorical,0.09559471,0.07981266,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15406699,0.0991784,No,No,No,To what extent does the management of the school: Promote teamwork among teachers
+261,d20f,School principals questionnaire,Categorical,0.09094469,0.07546714,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15603123,0.0991784,No,No,No,To what extent does the management of the school: Promotes the maximum use of capacities and teacher knowledge
+262,d20g,School principals questionnaire,Categorical,0.09143417,0.07566028,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15406699,0.0991784,No,No,No,To what extent does the management of the school: Generates procedures for teacher training courses
+263,d20h,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15406699,0.0991784,No,No,No,To what extent does the management of the school: Uses student educational outcomes/achievement to set school goals
+264,d20i,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15406699,0.0991784,No,No,No,To what extent does the management of the school: Checks that the work of teachers is in accordance with the objectives of the school
+265,d20j,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15406699,0.0991784,No,No,No,To what extent does the management of the school: Encourage that teaching practice is based on recent research developments
+266,d20k,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15668597,0.0991784,No,No,No,To what extent does the management of the school: Follow up on disruptive problems in the classrooms
+267,d20l,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15406699,0.0991784,No,No,No,To what extent does the management of the school: Discuss the educational objectives of the school with teachers
+268,d21a,School principals questionnaire,Categorical,0.08923152,0.07421177,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.1580962,0.0991784,No,No,No,Satisfaction level: With teachers
+269,d21b,School principals questionnaire,Categorical,0.08967205,0.07541886,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.1580962,0.0991784,No,No,No,Satisfaction level: With students
+270,d21c,School principals questionnaire,Categorical,0.09099364,0.07556371,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15547721,0.0991784,No,No,No,Satisfaction level: With families
+271,d21d,School principals questionnaire,Categorical,0.09348997,0.07870214,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15547721,0.0991784,No,No,No,Satisfaction level: With CEP associates
+272,d21e,School principals questionnaire,Categorical,0.090651,0.07537058,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.1579451,0.0991784,No,No,No,Satisfaction level: With guidance teams (EOEP)
+273,d21f,School principals questionnaire,Categorical,0.09016153,0.07498431,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15547721,0.0991784,No,No,No,Satisfaction level: With educational inspection
+274,d22a,School principals questionnaire,Categorical,0.09123837,0.07575684,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,No,No,Degree of agreement: The staff of the school share a common methodological line
+275,d22b,School principals questionnaire,Categorical,0.08932942,0.07426006,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,No,No,Degree of agreement: There is a high level of cooperation between the school and the local community
+276,d22c,School principals questionnaire,Categorical,0.08923152,0.07421177,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,No,No,Degree of agreement: School staff speak openly about difficulties in carrying out their teaching work
+277,d22d,School principals questionnaire,Categorical,0.08923152,0.07421177,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,No,No,Degree of agreement: There is mutual respect for the ideas of colleagues
+278,d22e,School principals questionnaire,Categorical,0.09397944,0.07812274,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,No,No,Degree of agreement: There is a culture of sharing successes and failures
+279,d22f,School principals questionnaire,Categorical,0.09397944,0.07875042,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.07353388,0.15497356,0.08098592,No,No,No,Degree of agreement: Relations between teachers and students are good
+280,d30a,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,1,1,1,1,1,No,Yes,No,Student grouping criteria: By alphabetical order of last names or other random criteria
+281,d30b,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,1,1,1,1,1,No,Yes,No,Student grouping criteria:Balance between girls and boys
+282,d30c,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,1,1,1,1,1,No,Yes,No,Student grouping criteria: Linguistic reasons
+283,d30d,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,1,1,1,1,1,No,Yes,No,Student grouping criteria: According to academic performance
+284,d30e,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,1,1,1,1,1,No,Yes,No,Student grouping criteria: Looking for homogeneity according to the characteristics of the students
+285,d30f,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,1,1,1,1,1,No,Yes,No,Student grouping criteria: Seeking heterogeneity among students
+286,d31a,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15653488,0.0991784,No,Yes,No,Degree of agreement: I am satisfied with the academic results of the students
+287,d31b,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15653488,0.0991784,No,Yes,No,Degree of agreement: The students have obtained the results expected of them
+288,d31c,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15653488,0.0991784,No,Yes,No,Degree of agreement: I believe that students can improve the academic results obtained
+289,d32a,School principals questionnaire,Categorical,1,1,0.06527171,0.10441767,0.12771392,0.08237082,0.11087549,0.08629596,0.15406699,0.0991784,No,No,No,Your school has a school teacher training plan
+290,d33a,School principals questionnaire,Categorical,1,1,0.1361649,0.2171764,0.24074074,0.08237082,0.11087549,0.08629596,0.15522538,0.0991784,No,No,No,Main theme of the school teacher training plan
+291,d121a,School principals questionnaire,Continuous,1,1,0.06527171,0.10441767,0.12771392,0.07902736,0.10693729,0.07353388,0.14510199,0.0991784,No,No,No,Number of teachers in primary education
+292,d121b,School principals questionnaire,Continuous,1,1,0.06527171,0.10441767,0.12771392,0.07902736,0.10693729,0.07353388,0.15588013,0.08098592,No,No,No,Number of mandatory secondary education teachers
+293,d131a,School principals questionnaire,Continuous,1,1,0.06527171,0.10441767,0.12771392,0.07902736,0.10693729,0.07353388,0.14832536,0.0991784,No,No,No,Number of teachers in primary education with 5 or more academic years
+294,d131b,School principals questionnaire,Continuous,1,1,0.06527171,0.10441767,0.12771392,0.07902736,0.10693729,0.07353388,0.1579451,0.08098592,No,No,No,Number of mandatory secondary education teachers with 5 or more academic years
+295,d301,School principals questionnaire,Categorical,1,1,1,1,1,0.87933131,0.88912451,0.9933151,0.89639889,1,No,Yes,No,Student grouping criteria: In alphabetical order of surnames
+296,d302,School principals questionnaire,Categorical,1,1,1,1,1,0.85987842,0.90820963,0.95533273,0.93180559,0.94865023,No,Yes,No,Student grouping criteria: Randomly
+297,d303,School principals questionnaire,Categorical,1,1,1,1,1,0.26352584,0.29263859,0.37982376,0.42503148,0.38321596,No,Yes,No,Student grouping criteria: Balance between girls and boys
+298,d304,School principals questionnaire,Categorical,1,1,1,1,1,0.87841945,0.86731294,1,0.88018131,0.89583333,No,Yes,No,Student grouping criteria: According to academic performance
+299,d305,School principals questionnaire,Categorical,1,1,1,1,1,0.94772036,0.85731596,0.91066545,0.86602871,0.79694836,No,Yes,No,Student grouping criteria: Looking for homogeneity according to student characteristics
+300,d306,School principals questionnaire,Categorical,1,1,1,1,1,0.43617021,0.34959103,0.2038894,0.4397381,0.26731221,No,Yes,No,Student grouping criteria: Seeking heterogeneity among students
+301,d307,School principals questionnaire,Categorical,1,1,1,1,1,0.843769,0.85549833,0.25554543,0.85031478,0.26555164,No,Yes,No,Student grouping criteria: By student's choice of subjects
+302,d308,School principals questionnaire,Categorical,1,1,1,1,1,0.67537994,0.60557407,0.91583105,0.66572652,0.82717136,No,Yes,No,Student grouping criteria: Other criteria
+303,tasa_nac_eso4,School principals questionnaire,Continuous,1,1,1,1,0.12771392,1,1,0.07353388,1,1,No,Yes,No,Rate of 4th grade of mandatory secondary education students with a different nationality
+304,tasa_nac_pri3,School principals questionnaire,Continuous,1,1,0.06527171,1,1,0.07902736,1,1,1,1,No,Yes,No,Rate of 3rd grade primary education students with a different nationality
+305,tasa_nac_pri6,School principals questionnaire,Continuous,1,1,1,0.10441767,1,1,0.08633747,1,1,1,No,Yes,No,Rate of 6th grade primary education students with a different nationality
+306,distnac,School principals questionnaire,Continuous,1,1,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Number of students with different nationality
+307,distnac_eso4,School principals questionnaire,Continuous,1,1,1,1,0.12771392,1,1,0.07353388,1,1,No,No,No,Number of students with different nationalities in 4th grade of mandatory secondary education
+308,distnac_pri3,School principals questionnaire,Continuous,1,1,0.06527171,1,1,0.07902736,1,1,1,1,No,No,No,Number of students with different nationality in 3rd grade primary education
+309,distnac_pri6,School principals questionnaire,Continuous,1,1,1,0.10441767,1,1,0.08633747,1,1,1,No,No,No,Number of students with different nationality in 6th grade primary education
+310,groups,School principals questionnaire,Continuous,1,1,0.06527171,0.10441767,0.12771392,0.07902736,0.10996668,0.07353388,1,1,No,No,No,Number of groups in the evaluated grade
+311,island,School principals questionnaire,Categorical,0.00107685,0.00478007,0.0003123,0.00185357,0.06417625,0.00607903,0.00151469,0.05621392,0.00377739,0.06132629,Yes,Yes,No,Canary island to which the school belongs
+312,capital_island,School principals questionnaire,Categorical,0.00107685,0.00478007,0.0003123,0.00185357,0.06417625,0.00607903,0.00151469,0.05621392,0.00377739,0.06132629,Yes,Yes,Yes,Tranformation of island. Capital island vs non capital island
+313,public_private,School principals questionnaire,Categorical,0.00107685,0.00478007,0.0003123,0.00185357,0.06417625,0.00607903,0.00151469,0.05621392,0.00377739,0.06132629,Yes,Yes,No,Public or private school
+314,f0,Family questionnaire,Categorical,0.32892805,0.30698663,0.52311056,0.43342601,1,0.14103343,0.14722811,1,0.3933518,1,No,No,No,"Respondent: mother, father, other"
+315,f1n,Family questionnaire,Continuous,0.33881547,0.31447057,0.51623985,0.42261353,1,0.10699088,0.11087549,1,0.39239486,1,No,No,No,Number of people in household
+316,f2an,Family questionnaire,Continuous,0.32251591,0.29897156,0.51623985,0.4223046,1,0.13799392,0.14207816,1,0.39969781,1,No,No,No,Mother age
+317,f2bn,Family questionnaire,Continuous,0.37175722,0.35111776,0.51655215,0.42354032,1,0.23465046,0.27809755,1,0.43349282,1,No,No,No,Father age
+318,f3a,Family questionnaire,Categorical,0.33259912,0.30978707,0.52342286,0.4300278,0.11590038,0.13343465,0.13662527,0.09024613,0.41077814,0.1056338,Yes,Yes,No,Mother education level
+319,f3b,Family questionnaire,Categorical,0.38952521,0.37158998,0.54122423,0.44825456,0.15166028,0.22158055,0.25325659,0.12275904,0.43923445,0.13116197,Yes,Yes,No,Father education level
+320,mother_education,Family questionnaire,Categorical,0.33259912,0.30978707,0.52342286,0.4300278,0.11590038,0.13343465,0.13662527,0.09024613,0.41077814,0.1056338,Yes,Yes,Yes,Transformation of f3a. Mother education
+321,father_education,Family questionnaire,Categorical,0.38952521,0.37158998,0.54122423,0.44825456,0.15166028,0.22158055,0.25325659,0.12275904,0.43923445,0.13116197,Yes,Yes,Yes,Transformation of f3b. Father education
+322,f4a,Family questionnaire,Categorical,0.34517866,0.3258172,0.52810743,0.43929564,0.11685824,0.14589666,0.15268101,0.11759344,0.42493075,0.12265258,Yes,Yes,No,Mother employment status
+323,f4b,Family questionnaire,Categorical,0.39818894,0.38510936,0.54403498,0.46246525,0.14814815,0.22218845,0.25507422,0.15162565,0.45615714,0.15346244,Yes,Yes,No,Father employment status
+324,f5a,Family questionnaire,Categorical,0.36686246,0.33861233,0.52841974,0.43466172,0.3087484,0.13130699,0.13420176,0.06593741,0.40261899,0.07159624,Yes,Yes,No,Mother place of birth
+325,f5b,Family questionnaire,Categorical,0.40861478,0.38385399,0.54184884,0.44794563,0.29885057,0.20303951,0.23235383,0.07687633,0.42140519,0.07775822,Yes,Yes,No,Father place of birth
+326,f5n,Family questionnaire,Categorical,0.32809594,0.30959394,0.51998751,0.42724745,0.22190294,0.10820669,0.11451075,0.07019143,0.39843868,0.07453052,Yes,Yes,No,Student place of birth
+327,inmigrant,Family questionnaire,Categorical,0.32809594,0.30959394,0.51998751,0.42724745,0.22190294,0.10820669,0.11451075,0.07019143,0.39843868,0.07453052,Yes,Yes,Yes,Transformation of f5n. Immigrant status
+328,inmigrant2,Family questionnaire,Categorical,0.32809594,0.30959394,0.51998751,0.42724745,0.22190294,0.10820669,0.11451075,0.07019143,0.39843868,0.07453052,Yes,Yes,Yes,Transformation of f5n. Immigrant status
+329,inmigrant_second_gen,Family questionnaire,Categorical,0.35521292,0.32601033,0.52654591,0.43280816,0.25031928,0.1212766,0.12178128,0.06198724,0.39889197,0.06748826,Yes,Yes,Yes,"Transformation of f5n. Immigrant status, second generation"
+330,f6,Family questionnaire,Categorical,0.70450318,0.66438125,0.96002498,0.95304294,1,0.88905775,0.89003332,1,0.92505666,1,No,Yes,No,"If your child was not born in Spain, how long has he/she been studying in the Spanish educational system, including current year"
+331,f7,Family questionnaire,Categorical,0.32853647,0.3009029,0.51623985,0.42168675,0.06417625,0.12674772,0.12420479,0.05651778,0.3965248,0.06191315,No,Yes,No,Language usually spoken at home
+332,f8ta,Family questionnaire,Continuous,0.40039158,0.36222297,0.57682698,0.49150448,0.06417625,0.18601824,0.17146319,0.05621392,0.39607152,0.06279343,No,No,No,Child school start age. Years
+333,f8tm,Family questionnaire,Continuous,0.52520803,0.52667665,0.71361649,0.6570899,1,0.29908815,0.30566495,1,0.40619491,1,No,No,No,Child school start age. Months
+334,start_schooling_age,Family questionnaire,Categorical,0.33318649,0.30944909,0.51998751,0.4266296,0.06417625,0.14012158,0.13965465,0.05621392,0.39491312,0.06279343,No,Yes,Yes,Transformation of f8ta and f8tm. Start schooling age
+335,f9a,Family questionnaire,Categorical,0.32320117,0.29901984,1,1,1,1,1,1,1,1,No,No,No,How often does your child use at home. Quiet place to study
+336,f9b,Family questionnaire,Categorical,0.34047969,0.3173193,0.51623985,0.42168675,0.06417625,0.11428571,0.12269009,0.05894865,0.39627298,0.06308685,No,No,No,How often does your child use at home. Books
+337,f9c,Family questionnaire,Categorical,0.36108664,0.3381295,0.51623985,0.42168675,0.06417625,0.15653495,0.15328688,0.05894865,0.39818685,0.06543427,No,No,No,How often does your child use at home. Encyclopedias
+338,f9d,Family questionnaire,Categorical,0.3402839,0.314374,0.51623985,0.42168675,0.06417625,0.12583587,0.12571948,0.05894865,0.39697809,0.06484742,No,No,No,"How often does your child use at home. PC, tablet"
+339,f9e,Family questionnaire,Categorical,0.36730299,0.33228719,0.51623985,0.42168675,0.06417625,0.13221884,0.12814299,0.05864479,0.39697809,0.06484742,No,No,No,How often does your child use at home. Internet
+340,f9f,Family questionnaire,Categorical,0.35124816,0.32055429,1,1,1,0.12948328,0.12299303,0.05864479,0.39707882,0.06338028,No,No,No,How often does your child use at home. Smartphone
+341,f9g,Family questionnaire,Categorical,0.35095448,0.32417556,1,1,1,1,1,1,1,1,No,No,No,How often does your child use at home. Calculator
+342,f9h,Family questionnaire,Categorical,0.35604503,0.33045242,0.51623985,0.42168675,0.06417625,0.16079027,0.15964859,0.05864479,0.39904306,0.06484742,No,No,No,How often does your child use at home. Newspapers
+343,f10n,Family questionnaire,Continuous,0.32232012,0.29704022,0.51655215,0.4223046,0.0715198,0.12340426,0.12632536,0.06532969,0.39803576,0.07335681,No,No,No,Number of digital devices at home
+344,f11,Family questionnaire,Categorical,0.31600587,0.28912172,0.51623985,0.42168675,0.06417625,0.10121581,0.10996668,0.05894865,0.39632334,0.06338028,Yes,Yes,No,Number of books at home
+345,books,Family questionnaire,Categorical,0.31600587,0.28912172,0.51623985,0.42168675,0.06417625,0.10121581,0.10996668,0.05894865,0.39632334,0.06338028,Yes,Yes,Yes,Transformation of f11. Number of books at home
+346,f12a,Family questionnaire,Categorical,0.32285854,0.29404664,0.51623985,0.42168675,1,0.10790274,0.10966374,1,0.39672627,1,No,Yes,No,Frequency of your child at home. He/she see adults reading books
+347,f12b,Family questionnaire,Categorical,0.33015174,0.31181498,0.51623985,0.42168675,1,0.11641337,0.12753711,1,0.39823722,1,No,Yes,No,Frequency of your child at home. Adults read stories to their children 
+348,f13n,Family questionnaire,Continuous,0.33573177,0.31364975,1,1,1,1,1,1,1,1,No,No,No,Number of collective meetings in the school during the academic year
+349,f14a,Family questionnaire,Categorical,0.330837,0.30520014,0.51623985,0.42168675,1,0.1331307,0.13571645,1,0.40695039,1,No,No,No,Frequency you go to the school to see how your child is doing: Mother
+350,f14b,Family questionnaire,Categorical,0.41649535,0.39862875,0.51623985,0.42168675,1,0.26717325,0.29142684,1,0.44220599,1,No,No,No,Frequency you go to the school to see how your child is doing: Father
+351,f14c,Family questionnaire,Categorical,0.89848262,0.8790015,1,1,1,1,1,1,1,1,No,No,No,Frequency you go to the school to see how your child is doing: Other person
+352,f15a,Family questionnaire,Categorical,0.33078806,0.3035585,0.51623985,0.42168675,1,0.10911854,0.11420782,1,0.39959708,1,No,No,No,"In an interview with the teacher, you have been interested in: Scores"
+353,f15b,Family questionnaire,Categorical,0.32838962,0.30331708,0.51623985,0.42168675,1,0.11276596,0.12056952,1,0.40010073,1,No,No,No,"In an interview with the teacher, you have been interested in: Dificulties in the learning process"
+354,f15c,Family questionnaire,Categorical,0.33117964,0.3079523,0.51623985,0.42168675,1,0.11428571,0.12087246,1,0.40005037,1,No,No,No,"In an interview with the teacher, you have been interested in: Behavior"
+355,f15d,Family questionnaire,Categorical,0.33675967,0.31084931,0.51623985,0.42168675,1,0.11762918,0.12269009,1,0.4001511,1,No,No,No,"In an interview with the teacher, you have been interested in: Behavior of the class group"
+356,f15e,Family questionnaire,Categorical,0.33519334,0.31075274,0.51623985,0.42168675,1,0.11458967,0.1211754,1,0.40065475,1,No,No,No,"In an interview with the teacher, you have been interested in: Relationship with classmates"
+357,f15f,Family questionnaire,Categorical,1,1,1,1,1,0.11702128,0.11935777,1,0.40065475,1,No,No,No,"In an interview with the teacher, you have been interested in: Teaching/learning process methodologies"
+358,f16a,Family questionnaire,Categorical,0.32285854,0.29641253,0.51623985,0.42168675,1,0.10699088,0.11117843,1,0.39843868,1,No,Yes,No,How often do you do with your child at home: Talk about the work in class
+359,f16b,Family questionnaire,Categorical,0.32902594,0.30317223,0.51623985,0.42168675,1,0.11155015,0.11451075,1,0.39929489,1,No,Yes,No,How often do you do with your child at home: Planning his/her time to study/do homework
+360,f16c,Family questionnaire,Categorical,0.32701909,0.30201342,0.51623985,0.42168675,1,0.10607903,0.11239018,1,0.3989927,1,No,Yes,No,How often do you do with your child at home: Help him to do his/her homework
+361,f16d,Family questionnaire,Categorical,0.32765541,0.30259283,1,1,1,1,1,1,1,1,No,Yes,No,How often do you do with your child at home: Provide the materials and resources he/shee needs to study
+362,f16e,Family questionnaire,Categorical,0.32378855,0.29839216,0.51623985,0.42168675,1,0.10668693,0.11269312,1,0.39894233,1,No,Yes,No,How often do you do with your child at home: Check that he/she has done the homework
+363,f16f,Family questionnaire,Categorical,0.32829173,0.30239969,1,1,1,1,1,1,1,1,No,Yes,No,How often do you do with your child at home: Control class attendance
+364,f17a,Family questionnaire,Categorical,0.32834068,0.30201342,0.51623985,0.42168675,1,0.10942249,0.113299,1,0.40030219,1,No,Yes,No,Frequency you participate in school activities: AMPA meetings
+365,f17b,Family questionnaire,Categorical,0.33225649,0.30602096,0.51623985,0.42168675,1,0.11215805,0.11632839,1,0.40080584,1,No,Yes,No,Frequency you participate in school activities: training activities for parents
+366,f17c,Family questionnaire,Categorical,0.33436123,0.30838685,0.51623985,0.42168675,1,0.11367781,0.11572251,1,0.4010073,1,No,Yes,No,Frequency you participate in school activities: Organization of out-of-school activities
+367,f17d,Family questionnaire,Categorical,0.33568282,0.30949737,0.51623985,0.42168675,1,0.11519757,0.11541957,1,0.40120876,1,No,Yes,No,Frequency you participate in school activities: other activities
+368,f18a,Family questionnaire,Categorical,0.32075379,0.29322582,0.51623985,0.42168675,1,0.10455927,0.10754317,1,0.40060438,1,No,No,No,Degree of satisfaction: Teachers
+369,f18b,Family questionnaire,Categorical,0.32393539,0.29675052,0.51623985,0.42168675,1,0.11033435,0.11026962,1,0.40105767,1,No,No,No,Degree of satisfaction: Principal
+370,f18c,Family questionnaire,Categorical,0.32780225,0.30056492,0.51623985,0.42168675,1,0.10851064,0.11178431,1,0.40095694,1,No,No,No,Degree of satisfaction: Work in class
+371,f18d,Family questionnaire,Categorical,0.32437592,0.29752306,0.51623985,0.42168675,1,0.10790274,0.11117843,1,0.40095694,1,No,No,No,Degree of satisfaction: Relationship with teachers
+372,f18e,Family questionnaire,Categorical,0.3237396,0.29655738,0.51623985,0.42168675,1,0.10729483,0.11057255,1,0.4011584,1,No,No,No,Degree of satisfaction: Classmates
+373,f18f,Family questionnaire,Categorical,0.330837,0.30399305,0.51623985,0.42168675,1,0.11641337,0.11451075,1,0.40135986,1,No,No,No,Degree of satisfaction: Resources
+374,f18g,Family questionnaire,Categorical,0.32545277,0.29839216,0.51623985,0.42168675,1,0.10911854,0.11117843,1,0.4010073,1,No,No,No,Degree of satisfaction: Learning level
+375,f18h,Family questionnaire,Categorical,0.32599119,0.3000338,0.51623985,0.42168675,1,0.10972644,0.11087549,1,0.40146059,1,No,No,No,Degree of satisfaction: School environment
+376,f18i,Family questionnaire,Categorical,0.3237396,0.29636425,0.51623985,0.42168675,1,0.10790274,0.11087549,1,0.40110803,1,No,No,No,Degree of satisfaction: In general with the school
+377,f19a,Family questionnaire,Categorical,0.32418013,0.29646082,0.51623985,0.42168675,1,0.10668693,0.10996668,1,0.40110803,1,No,No,No,Degree of satisfaction with the teacher: Motivation and enthusiasm
+378,f19b,Family questionnaire,Categorical,0.32613803,0.30022693,0.51623985,0.42168675,1,0.1100304,0.11117843,1,0.40196424,1,No,No,No,Degree of satisfaction with the teacher: Cordiality and closeness
+379,f19c,Family questionnaire,Categorical,0.32701909,0.30104775,0.51623985,0.42168675,1,0.10972644,0.11087549,1,0.40206497,1,No,No,No,Degree of satisfaction with the teacher: Work capacity
+380,f19d,Family questionnaire,Categorical,0.32594224,0.30114432,0.51623985,0.42168675,1,0.10911854,0.11087549,1,0.40196424,1,No,No,No,Degree of satisfaction with the teacher: Smooth communication
+381,f19e,Family questionnaire,Categorical,0.3278512,0.30066148,0.51623985,0.42168675,1,0.11033435,0.11178431,1,0.40211534,1,No,No,No,Degree of satisfaction with the teacher: Flexibility and patience
+382,f20,Family questionnaire,Categorical,0.32383749,0.29597798,0.51623985,0.42168675,1,0.15683891,0.15449864,1,0.40161168,1,No,Yes,No,Would you recommend this school?
+383,f21n,Family questionnaire,Continuous,0.31884484,0.29399836,0.51717676,0.42168675,1,0.1224924,0.12087246,1,0.39773357,1,No,Yes,No,Homework hours/week
+384,f22,Family questionnaire,Categorical,0.31057269,0.28366568,0.51623985,0.42168675,1,0.10121581,0.10905786,1,0.39743138,1,No,Yes,No,Homework days/week
+385,f23,Family questionnaire,Categorical,0.40939794,0.38182608,0.5649594,0.47729379,1,0.10942249,0.11451075,1,0.40141022,1,Yes,Yes,No,Parent expectations: Up to what educational level do you expect your child to study?
+386,f24a,Family questionnaire,Categorical,0.34317181,0.32185795,0.51623985,0.42168675,0.15102171,0.19361702,0.19539533,0.19538134,0.45449509,0.20246479,Yes,Yes,No,Mother occupation
+387,f24b,Family questionnaire,Categorical,0.39344102,0.37448699,0.51623985,0.42168675,0.17688378,0.26382979,0.28173281,0.20601641,0.48557039,0.21390845,Yes,Yes,No,Father occupation
+388,mother_occupation,Family questionnaire,Categorical,0.34317181,0.32185795,0.51623985,0.42168675,0.15102171,0.19361702,0.19539533,0.19538134,0.45449509,0.20246479,Yes,Yes,Yes,Transformation of f24a. Mother occupation
+389,father_occupation,Family questionnaire,Categorical,0.39344102,0.37448699,0.51623985,0.42168675,0.17688378,0.26382979,0.28173281,0.20601641,0.48557039,0.21390845,Yes,Yes,Yes,Transformation of f24b. Father occupation
+390,f30,Family questionnaire,Continuous,1,1,0.51623985,0.42168675,1,0.10911854,0.113299,1,0.39249559,1,No,No,No,Total number of children in the household
+391,f31,Family questionnaire,Categorical,1,1,0.51623985,0.42168675,1,0.11155015,0.11632839,1,0.3955175,1,No,No,No,Type of family unit
+392,single_parent_household,Family questionnaire,Categorical,1,1,0.51623985,0.42168675,1,0.11155015,0.11632839,1,0.3955175,1,No,Yes,Yes,Transformation of f31. Single parent household
+393,f33a,Family questionnaire,Categorical,1,1,0.51623985,0.42168675,1,0.2331307,0.24538019,1,0.49206749,1,No,No,No,Household income. Income from work (self-employed or wage employment)
+394,f33b,Family questionnaire,Categorical,1,1,0.51623985,0.42168675,1,0.91337386,0.90578613,1,0.93361874,1,No,No,No,Household income. Unemployment benefits and subsidies
+395,f33c,Family questionnaire,Categorical,1,1,0.51623985,0.42168675,1,0.95349544,0.9354741,1,0.95935533,1,No,No,No,"Household income. Pension for retirement, widowhood or disability"
+396,f33d,Family questionnaire,Categorical,1,1,0.51623985,0.42168675,1,0.95136778,0.95880036,1,0.97290355,1,No,No,No,"Household income. Public economic benefits for dependent children or other economic benefits such as family aid, Canary Islands Insertion Benefit (PCI), related to housing or education"
+397,f33e,Family questionnaire,Categorical,1,1,0.51623985,0.42168675,1,0.9449848,0.9315359,1,0.96036263,1,No,No,No,"Household Income. Child support from divorce, or help from other relatives"
+398,f33f,Family questionnaire,Categorical,1,1,0.51623985,0.42168675,1,0.98419453,0.9787943,1,0.98851675,1,No,No,No,Household income. Other regular income / Other subsidy or regular social benefit
+399,f33g,Family questionnaire,Categorical,1,1,0.51623985,0.42168675,1,0.99118541,0.99000303,1,0.99672627,1,No,No,No,"Household income. No income, no household member provides income"
+400,f33h,Family questionnaire,Categorical,1,1,0.51623985,0.42168675,1,0.97051672,0.97546198,1,0.97577436,1,No,No,No,Household income. No answer/don't know 
+401,f34,Family questionnaire,Categorical,1,1,0.51623985,0.42168675,1,0.11246201,0.12541654,1,0.40412994,1,Yes,Yes,No,Monthly household income
+402,household_income_q,Family questionnaire,Categorical,1,1,0.57682698,0.50139018,1,0.23404255,0.24325962,1,0.48043314,1,Yes,Yes,Yes,Tranformation of f34. Monthly household income (quartiles)
+403,nhousehold,Family questionnaire,Continuous,1,1,0.06589631,0.08124807,0.06417625,1,1,0.05803707,1,0.0625,No,No,No,Number of people in household
+404,ESCS,Family questionnaire,Continuous,0.31649535,0.29013568,0.51623985,0.42168675,0.07758621,0.10972644,0.11481369,0.0793072,0.4064971,0.08568075,Yes,Yes,Yes,"Economic, Social and Cultural Status index"
+405,p2,Teacher questionnaire,Categorical,0.34136074,0.37226595,1,1,1,0.07142857,0.09027567,1,0.22407454,1,No,No,No,Sex
+406,p2n,Teacher questionnaire,Continuous,0.35795399,0.37849452,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22432637,1,No,No,No,Age
+407,p3n,Teacher questionnaire,Continuous,0.34454234,0.37250736,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22719718,1,No,No,No,Years as a teacher
+408,p4n,Teacher questionnaire,Continuous,0.35105237,0.37757713,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22472929,1,No,No,No,Year in the school
+409,p5,Teacher questionnaire,Categorical,0.34140969,0.37028632,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Have you teach in the same group the past two years?
+410,p6n,Teacher questionnaire,Continuous,0.34366128,0.37448699,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Number of students in your class group
+411,p7an,Teacher questionnaire,Continuous,0.63191385,0.60624789,0.15427858,0.22675317,1,0.11550152,0.1620721,1,0.25615714,1,No,No,No,Number of students in your class group with: NEE
+412,p7bn,Teacher questionnaire,Continuous,0.66020558,0.66872676,0.24266084,0.26320667,1,0.12857143,0.16782793,1,0.26592798,1,No,No,No,Number of students in your class group with: TDAH
+413,p7cn,Teacher questionnaire,Continuous,0.77924621,0.81290136,0.32854466,0.40593142,1,0.11519757,0.15510451,1,0.26587761,1,No,No,No,Number of students in your class group with: DEA
+414,p7dn,Teacher questionnaire,Continuous,0.77851199,0.72217662,0.30699563,0.36978684,1,0.13465046,0.16086035,1,0.26346009,1,No,No,No,Number of students in your class group with: ECOPHE
+415,p7en,Teacher questionnaire,Continuous,0.7484092,0.80261697,0.33291693,0.41828854,1,0.13465046,0.16782793,1,0.26668346,1,No,No,No,Number of students in your class group with: ALCAIN
+416,p7fn,Teacher questionnaire,Continuous,0.63132648,0.71425812,1,1,1,1,1,1,1,1,No,No,No,Number of students in your class group with: Disadvantaged economic situation
+417,p7gn,Teacher questionnaire,Continuous,1,1,0.34353529,0.44794563,1,0.13465046,0.17479552,1,0.26975573,1,No,No,No,Number of students in your class group with: INTARSE
+418,p8an,Teacher questionnaire,Continuous,0.52241801,0.54763169,0.0712055,0.09823911,1,0.07142857,0.10451378,1,0.23001763,1,No,No,No,Number of students in your class group: born in another country with a language other than Spanish
+419,p8bn,Teacher questionnaire,Continuous,0.52447381,0.53024963,0.0712055,0.09823911,1,0.0781155,0.09724326,1,0.22795266,1,No,No,No,Number of students in your class group: born in another country with a language equal to Spanish
+420,p9a,Teacher questionnaire,Categorical,0.37165932,0.47313022,0.0712055,0.09823911,1,0.17021277,0.23023326,1,0.34762025,1,No,No,No,Subject you teach in your class group: Language
+421,p9b,Teacher questionnaire,Categorical,0.40078316,0.53261552,0.0712055,0.09823911,1,0.21215805,0.33171766,1,0.44960967,1,No,No,No,Subject you teach in your class group: Mathematics
+422,p9c,Teacher questionnaire,Categorical,0.569163,0.56052339,0.0712055,0.09823911,1,0.23677812,0.36079976,1,0.48763536,1,No,No,No,Subject you teach in your class group: Social sciences
+423,p9d,Teacher questionnaire,Categorical,0.91047479,0.88585776,0.0712055,0.09823911,1,0.78601824,0.81944865,1,0.86507177,1,No,No,No,Subject you teach in your class group: English
+424,p9e,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.26960486,0.36382914,1,0.47917401,1,No,No,No,Subject you teach in your class group: Natural sciences
+425,p9f,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.17477204,0.29657679,1,0.40312264,1,No,No,No,Subject you teach in your class group: Other
+426,p10n,Teacher questionnaire,Continuous,0.35403818,0.37830139,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22135482,1,No,No,No,Teaching hours per week in class group
+427,p11,Teacher questionnaire,Categorical,0.3391581,0.36941722,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Average time class for explanations
+428,p12a,Teacher questionnaire,Categorical,0.34023495,0.37221766,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22039788,1,No,No,No,Degree of agreement about your class group: Has a good attitude
+429,p12b,Teacher questionnaire,Categorical,0.35433186,0.39061368,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22039788,1,No,No,No,Degree of agreement about your class group: Comply with the standards/rules/norms
+430,p12c,Teacher questionnaire,Categorical,0.34243759,0.37434214,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22140519,1,No,No,No,Degree of agreement about your class group: Participate actively
+431,p12d,Teacher questionnaire,Categorical,0.34312286,0.3765149,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22039788,1,No,No,No,Degree of agreement about your class group: Has interest in the class
+432,p13,Teacher questionnaire,Categorical,0.34047969,0.37018975,0.0712055,0.09823911,1,0.07781155,0.09027567,1,0.22477965,1,No,No,No,Degree of agreement: Satisfied with the academic results of my students
+433,p13b,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.0781155,0.09027567,1,0.22493075,1,No,No,No,Degree of agreement: My students have obtained the results that I expected
+434,p13c,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.08449848,0.09027567,1,0.22603878,1,No,No,No,Degree of agreement: My students can improve their academic results
+435,p15a,Teacher questionnaire,Categorical,0.68614782,0.66264304,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Main topic of the PFC: Competences and didactic programming
+436,p15b,Teacher questionnaire,Categorical,0.8659814,0.87311091,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Main topic of the PFC: Attention to diversity
+437,p15c,Teacher questionnaire,Categorical,0.91458639,0.91714548,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Main topic of the PFC: Participatory culture
+438,p15d,Teacher questionnaire,Categorical,0.67670093,0.68992323,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Main topic of the PFC: TICs
+439,p15e,Teacher questionnaire,Categorical,0.94845815,0.94819178,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Main topic of the PFC: Speaking another language
+440,p15f,Teacher questionnaire,Categorical,0.77469408,0.76891507,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Main topic of the PFC: School environment
+441,p15g,Teacher questionnaire,Categorical,0.84796867,0.85413548,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Main topic of the PFC: Other
+442,p15h,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Main topic of the PFC: Didactic methodology
+443,p15i,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Main topic of the CBP: Evaluation
+444,p16a,Teacher questionnaire,Categorical,0.4175722,0.43353773,0.24172392,0.25486562,1,0.25288754,0.1911542,1,0.32450264,1,No,No,No,Incidence of the PFC in: Organization of the school
+445,p16b,Teacher questionnaire,Categorical,0.41409692,0.42957848,0.24172392,0.25486562,1,0.22066869,0.17025144,1,0.31281793,1,No,No,No,Incidence of the PFC in: Classroom management
+446,p16c,Teacher questionnaire,Categorical,0.4092511,0.42677804,0.24172392,0.25486562,1,0.21337386,0.15934565,1,0.30964493,1,No,No,No,Incidence of the PFC in: Collaborative work
+447,p16d,Teacher questionnaire,Categorical,0.4134606,0.44044228,0.24172392,0.25486562,1,0.22978723,0.18085429,1,0.32243767,1,No,No,No,Incidence of the PFC in: Evaluation
+448,p16e,Teacher questionnaire,Categorical,0.41380323,0.43387572,0.24172392,0.25486562,1,0.23708207,0.19569827,1,0.31699824,1,No,No,No,Incidence of the PFC in: School environment
+449,p16f,Teacher questionnaire,Categorical,0.43680861,0.44696055,0.24172392,0.25486562,1,0.25258359,0.20448349,1,0.34359104,1,No,No,No,Incidence of the PFC in: Pedagogical leadership
+450,p16g,Teacher questionnaire,Categorical,0.40876163,0.43257206,0.24172392,0.25486562,1,0.21641337,0.1911542,1,0.32299169,1,No,No,No,Incidence of the PFC in: Use of TICs
+451,p16h,Teacher questionnaire,Categorical,1,1,1,1,1,0.22705167,0.16782793,1,0.32017124,1,No,No,No,Incidence of the PFC in: Methodological changes
+452,p18a,Teacher questionnaire,Categorical,0.56965247,0.56873159,0.0712055,0.09823911,1,0.39179331,0.45168131,1,0.61818182,1,No,No,No,Individual training topic: Competences and didactic programming
+453,p18b,Teacher questionnaire,Categorical,0.76725404,0.78856646,0.0712055,0.09823911,1,0.60486322,0.67070585,1,0.71196172,1,No,No,No,Individual training topic: Attention to diversity
+454,p18c,Teacher questionnaire,Categorical,0.85947137,0.84423736,0.0712055,0.09823911,1,0.90182371,0.90457437,1,0.89614707,1,No,No,No,Individual training topic: Participatory culture
+455,p18d,Teacher questionnaire,Categorical,0.57821831,0.56540003,0.0712055,0.09823911,1,0.3893617,0.53165707,1,0.56293125,1,No,No,No,Individual training topic: TICs
+456,p18e,Teacher questionnaire,Categorical,0.87689672,0.84925885,0.0712055,0.09823911,1,0.80364742,0.80278703,1,0.82890959,1,No,No,No,Individual training topic: Speaking another language
+457,p18f,Teacher questionnaire,Categorical,0.73558492,0.75312636,0.0712055,0.09823911,1,0.6218845,0.73189942,1,0.74323848,1,No,No,No,Individual training topic: School environment
+458,p18g,Teacher questionnaire,Categorical,0.8463534,0.8702139,0.0712055,0.09823911,1,0.61398176,0.59588004,1,0.66074037,1,No,No,No,Individual training topic: Other
+459,p18h,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.33556231,0.37715844,1,0.52208512,1,No,No,No,Individual training topic: Didactic methodology
+460,p18i,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.63404255,0.70069676,1,0.74736842,1,No,No,No,Individual training topic: Evaluation
+461,p19,Teacher questionnaire,Categorical,0.40837004,0.40896142,1,1,1,1,1,1,1,1,No,No,No,Degree of agreement: The training offer of the Administration responds to the needs of the teaching staff
+462,p20,Teacher questionnaire,Categorical,0.40817425,0.40775433,0.0712055,0.09823911,1,0.09392097,0.10057558,1,0.25021405,1,No,No,No,Incidence of training in your teaching practice
+463,p21a,Teacher questionnaire,Categorical,0.3413118,0.37525952,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22039788,1,No,No,No,"In class, your students: Suggest activities"
+464,p21b,Teacher questionnaire,Categorical,0.34547234,0.38018444,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22039788,1,No,No,No,"In class, your students: Take notes and/or make summaries"
+465,p21c,Teacher questionnaire,Categorical,0.34566814,0.3779634,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22039788,1,No,No,No,"In class, your students: Do the proposed activities"
+466,p21d,Teacher questionnaire,Categorical,0.34052863,0.3768046,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22180811,1,No,No,No,"In class, your students: Listen to the explanations"
+467,p21e,Teacher questionnaire,Categorical,0.34248654,0.37482497,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22039788,1,No,No,No,"In class, your students: Ask what they don't understand"
+468,p21f,Teacher questionnaire,Categorical,0.34302496,0.37501811,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22039788,1,No,No,No,"In class, your students: Work individually"
+469,p22a,Teacher questionnaire,Categorical,0.34165443,0.37091401,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22145555,1,No,No,No,"Methodologically, in the classroom: I do team activities"
+470,p22b,Teacher questionnaire,Categorical,0.34180127,0.36961035,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22145555,1,No,No,No,"Methodologically, in the classroom: I propose topics to research and debate"
+471,p22c,Teacher questionnaire,Categorical,0.3443955,0.37569408,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22145555,1,No,No,No,"Methodologically, in the classroom: I promote public presentation of works"
+472,p22d,Teacher questionnaire,Categorical,0.34317181,0.37076916,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22140519,1,No,No,No,"Methodologically, in the classroom: I take into account self-evaluations"
+473,p22e,Teacher questionnaire,Categorical,0.34052863,0.37130028,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22140519,1,No,No,No,"Methodologically, in the classroom: I adapt the tasks to the reality of the student"
+474,p22f,Teacher questionnaire,Categorical,0.34096916,0.37052774,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22039788,1,No,No,No,"Methodologically, in the classroom: I promote student interactions"
+475,p22g,Teacher questionnaire,Categorical,0.33974547,0.37231423,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22150592,1,No,No,No,"Methodologically, in the classroom: I ask while I explain"
+476,p23a,Teacher questionnaire,Categorical,0.34527655,0.37371445,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22488038,1,No,No,No,Resources used in class: textbook
+477,p23b,Teacher questionnaire,Categorical,0.34322075,0.37777027,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22039788,1,No,No,No,Resources used in class: library books
+478,p23c,Teacher questionnaire,Categorical,0.34297602,0.38071556,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.2209519,1,No,No,No,Resources used in class: newspapers or magazines
+479,p23d,Teacher questionnaire,Categorical,0.35085658,0.3826469,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22039788,1,No,No,No,Resources used in class: computers or tablets
+480,p23e,Teacher questionnaire,Categorical,0.34419971,0.37637004,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22054898,1,No,No,No,"Resources used in class: videos, images"
+481,p23f,Teacher questionnaire,Categorical,0.34366128,0.37970161,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22135482,1,No,No,No,Resources used in class: school agenda
+482,p23g,Teacher questionnaire,Categorical,0.34219285,0.3744387,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22039788,1,No,No,No,Resources used in class: material prepared by teachers
+483,p23h,Teacher questionnaire,Categorical,0.34082232,0.37245908,1,1,1,0.07142857,0.09027567,1,0.22039788,1,No,No,No,Resources used in class: digital whiteboard
+484,p23i,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,1,1,1,1,1,No,No,No,Resources used in class: material prepared by me
+485,p24a,Teacher questionnaire,Categorical,0.33964758,0.37641833,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22352052,1,No,No,No,Evaluation: I ask questions before starting a topic
+486,p24b,Teacher questionnaire,Categorical,0.34371023,0.37221766,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22271468,1,No,No,No,Evaluation: I do tests after each topic
+487,p24c,Teacher questionnaire,Categorical,0.35012237,0.37506639,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22271468,1,No,No,No,Evaluation: I do quarterly written tests
+488,p24d,Teacher questionnaire,Categorical,0.34557024,0.38061899,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22170738,1,No,No,No,Evaluation: I correct homework and notebooks
+489,p24e,Teacher questionnaire,Categorical,0.3443955,0.37516296,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22397381,1,No,No,No,Evaluation: I review activities in class
+490,p24f,Teacher questionnaire,Categorical,0.34322075,0.3738593,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22271468,1,No,No,No,Evaluation: I do oral exams
+491,p24g,Teacher questionnaire,Categorical,0.34488497,0.3779634,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22185847,1,No,No,No,Evaluation: I take into account  self-evaluations
+492,p24h,Teacher questionnaire,Categorical,0.34400392,0.37250736,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22170738,1,No,No,No,Evaluation: I value interest and participation
+493,p24i,Teacher questionnaire,Categorical,0.34282917,0.37337647,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22432637,1,No,No,No,Evaluation: I value the behavior
+494,p24j,Teacher questionnaire,Categorical,0.35947137,0.38211578,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22170738,1,No,No,No,Evaluation: I take into account peer evaluation
+495,p24k,Teacher questionnaire,Categorical,0.34605972,0.37719086,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22170738,1,No,No,No,Evaluation: I use evaluation rubrics
+496,p25,Teacher questionnaire,Categorical,0.34175233,0.37197624,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22261395,1,No,No,No,How are the students normally seated in your class?
+497,p26,Teacher questionnaire,Categorical,0.34380813,0.37144513,1,1,1,1,1,1,1,1,No,No,No,How do you usually solve behavior problems in class?
+498,p26a,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.08449848,0.10481672,1,0.22951398,1,No,No,No,Degree of agreement: How do you solve behavior problems in class?: Students are sent to the principal
+499,p26b,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.08449848,0.10481672,1,0.22951398,1,No,No,No,Degree of agreement: How do you solve behavior problems in class?: Students are sent to the management team
+500,p26c,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22583732,1,No,No,No,"Degree of agreement: How do you solve behavior problems in class?: It is solved in the class, with the help of the rest of classmates"
+501,p26d,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.07781155,0.10481672,1,0.22170738,1,No,No,No,"Degree of agreement: How do you solve behavior problems in class?: It is solved in the class, individually"
+502,p27a,Teacher questionnaire,Categorical,0.3464513,0.38288832,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22780156,1,No,No,No,Degree to which your teaching work is hampered by: Lack of materials
+503,p27b,Teacher questionnaire,Categorical,0.34571708,0.37637004,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22588769,1,No,No,No,Degree to which your teaching work is hampered by: Lack of computers
+504,p27c,Teacher questionnaire,Categorical,0.35281449,0.37699773,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22593805,1,No,No,No,Degree to which your teaching work is hampered by: Poor internet connection
+505,p27d,Teacher questionnaire,Categorical,0.35374449,0.37820482,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22462856,1,No,No,No,Degree to which your teaching work is hampered by: Insufficient computer software
+506,p27e,Teacher questionnaire,Categorical,0.34806657,0.37608034,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22593805,1,No,No,No,Degree to which your teaching work is hampered by: Lack of audiovisual materials
+507,p27f,Teacher questionnaire,Categorical,0.35271659,0.37511467,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22689499,1,No,No,No,Degree to which your teaching work is hampered by: Lack of library resources
+508,p27g,Teacher questionnaire,Categorical,0.34591287,0.37805997,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22790229,1,No,No,No,Degree to which your teaching work is hampered by: Lack of support staff
+509,p27h,Teacher questionnaire,Categorical,0.3484092,0.37294191,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22588769,1,No,No,No,Degree to which your teaching work is hampered by: Administrative bureaucracy
+510,p28n,Teacher questionnaire,Continuous,0.37376407,0.40239486,0.0712055,0.09823911,1,0.07142857,0.09391094,1,0.22699572,1,No,No,No,Number of collective meetings with families during the academic year
+511,p29a,Teacher questionnaire,Categorical,0.34180127,0.37125199,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22477965,1,No,No,No,"In meetings with families, they show interest in: Knowing scores"
+512,p29b,Teacher questionnaire,Categorical,0.34292707,0.37361788,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22367162,1,No,No,No,"In meetings with families, they show interest in: Finding out about difficulties in the learning process"
+513,p29c,Teacher questionnaire,Categorical,0.34351444,0.37492154,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22467892,1,No,No,No,"In meetings with families, they show interest in: Their children behavior"
+514,p29d,Teacher questionnaire,Categorical,0.34537445,0.37410072,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22593805,1,No,No,No,"In meetings with families, they show interest in: Classmates behavior"
+515,p29e,Teacher questionnaire,Categorical,0.34189917,0.37303848,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22467892,1,No,No,No,"In meetings with families, they show interest in: Assesment on the teaching-learning process methodology"
+516,p30a,Teacher questionnaire,Categorical,0.34444444,0.37284535,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22563586,1,No,No,No,Degree of agreement: Families provide their children with the materials they need
+517,p30b,Teacher questionnaire,Categorical,0.34258443,0.37448699,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22563586,1,No,No,No,Degree of agreement: Families control that their children do their homework
+518,p30c,Teacher questionnaire,Categorical,0.34356339,0.37501811,0.0712055,0.09823911,1,0.07142857,0.09027567,1,0.22563586,1,No,No,No,Degree of agreement: Families worry about their children class attendance
+519,p31d,Teacher questionnaire,Categorical,0.34415076,0.37458355,1,1,1,0.0787234,0.09027567,1,0.22588769,1,No,No,No,How are the relationships: Between teachers and families
+520,p32a,Teacher questionnaire,Categorical,0.34473813,0.37641833,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22986653,1,No,Yes,No,Degree of agreement: The school works correctly
+521,p32b,Teacher questionnaire,Categorical,0.36035242,0.39017913,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22890959,1,No,Yes,No,Degree of agreement: It is a school of reference
+522,p32c,Teacher questionnaire,Categorical,0.34615761,0.37748057,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22996726,1,No,Yes,No,Degree of agreement: I would recommend this school
+523,p32d,Teacher questionnaire,Categorical,0.34517866,0.3776737,0.0712055,0.09823911,1,1,1,1,1,1,No,Yes,No,Degree of agreement: I would like to continue in this school
+524,p32e,Teacher questionnaire,Categorical,1,1,1,1,1,0.0787234,0.09027567,1,0.22885923,1,No,Yes,No,Degree of agreement: There is a good work environment in the school
+525,p34a,Teacher questionnaire,Categorical,0.3443955,0.374149,0.0712055,0.09823911,1,0.0787234,0.09512269,1,0.22885923,1,No,No,No,"The management of the school: Promotes relationships between teachers, students and families"
+526,p34b,Teacher questionnaire,Categorical,0.34552129,0.37458355,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22885923,1,No,No,No,The management of the school: Takes into account the opinions of teachers
+527,p34c,Teacher questionnaire,Categorical,0.34752814,0.37395587,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22885923,1,No,No,No,The management of the school: Promotes innovative ideas
+528,p34d,Teacher questionnaire,Categorical,0.34767499,0.3765149,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22895996,1,No,No,No,The management of the school: Creates a sense of identity
+529,p34e,Teacher questionnaire,Categorical,0.35085658,0.37511467,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22901032,1,No,No,No,The management of the school: Promotes teamwork
+530,p34f,Teacher questionnaire,Categorical,0.34880078,0.37719086,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22986653,1,No,No,No,The management of the school: Enhance teaching capacities
+531,p34g,Teacher questionnaire,Categorical,0.35100343,0.3738593,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.23001763,1,No,No,No,The management of the school: Encourages the Training School Plan (PFC)
+532,p41a,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22734827,1,No,Yes,No,Degree of agreement: Advantages of the teaching profession outweigh disadvantages
+533,p41b,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22734827,1,No,Yes,No,Degree of agreement: I would choose the teaching profession again
+534,p41c,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22739864,1,No,Yes,No,Degree of agreement: I would like to change to another school
+535,p41d,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,1,1,1,1,1,No,Yes,No,Degree of agreement: I regret dedicating to teaching
+536,p41e,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,1,1,1,1,1,No,Yes,No,Degree of agreement: I enjoy working in this school
+537,p41f,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,1,1,1,1,1,No,Yes,No,Degree of agreement: It is better to choose another profession
+538,p41g,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22739864,1,No,Yes,No,Degree of agreement: I would recommend this school
+539,p41h,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22840594,1,No,Yes,No,Degree of agreement: The teaching profession is highly valued by society
+540,p41i,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22739864,1,No,Yes,No,Degree of agreement: I am satisfied with my work at the school
+541,p41j,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,1,1,1,1,1,No,Yes,No,Degree of agreement: I am satisfied with my job
+542,p141,Teacher questionnaire,Categorical,0.34243759,0.37603206,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22825485,1,No,No,No,Does the center have a Training School Plan (PFC) in which you participate?
+543,p171n,Teacher questionnaire,Continuous,0.39520313,0.40572643,0.0712055,0.10349089,1,0.0787234,0.10239321,1,0.24160161,1,No,No,No,Hours of individual training carried out in the last 6 years
+544,p172n,Teacher questionnaire,Continuous,1,1,0.149594,0.16774791,1,0.0787234,0.1093608,1,0.24044321,1,No,No,No,"Of the hours of individual training, how many have been through the CEU offer?"
+545,p299d,Teacher questionnaire,Categorical,1,1,1,1,1,0.07142857,0.09027567,1,0.22462856,1,No,No,No,"In meetings with families, they show interest in: Discussing their child's relationship with other classmates"
+546,p311a,Teacher questionnaire,Categorical,0.34082232,0.37062431,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22588769,1,No,No,No,How are the relationships: Between the students
+547,p311b,Teacher questionnaire,Categorical,0.34199706,0.37284535,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22588769,1,No,No,No,How are the relationships like: Between teachers
+548,p311c,Teacher questionnaire,Categorical,0.34454234,0.37366617,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22588769,1,No,No,No,How are the relationships: Between teachers and students
+549,p311e,Teacher questionnaire,Categorical,0.34630445,0.37472841,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22770083,1,No,No,No,How are the relationships: Between the management team and the families
+550,p311f,Teacher questionnaire,Categorical,0.34537445,0.37250736,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22649207,1,No,No,No,How are the relationships: Between the management team and the teaching staff
+551,p311g,Teacher questionnaire,Categorical,0.34390602,0.37168654,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22770083,1,No,No,No,How are the relationships: Between the management team and the students
+552,p311h,Teacher questionnaire,Categorical,0.34772394,0.37598378,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.22749937,1,No,No,No,How are the relationships: Between the members of the management team
+553,p331a,Teacher questionnaire,Categorical,0.34855605,0.3732799,0.54184884,0.64411492,1,0.09544073,0.09451681,1,0.25051624,1,No,No,No,Assessment of the work of: Director/Principal
+554,p331b,Teacher questionnaire,Categorical,0.5144885,0.53517454,0.42941911,0.47235094,1,0.33465046,0.32535595,1,0.493931,1,No,No,No,Assessment of the work of: Vice-director/Vice-principal
+555,p331c,Teacher questionnaire,Categorical,0.36064611,0.39713196,0.53810119,0.60024714,1,0.10638298,0.14328991,1,0.26688492,1,No,No,No,Assessment of the work of: Head of studies
+556,p331d,Teacher questionnaire,Categorical,0.3617719,0.39563517,0.52841974,0.62712388,1,0.12279635,0.10845198,1,0.26361118,1,No,No,No,Assessment of the work of: Secretary
+557,p331e,Teacher questionnaire,Categorical,0.35638767,0.37617691,0.46346034,0.55607044,1,0.10243161,0.09027567,1,0.2465374,1,No,No,No,Assessment of the work of: Counselor
+558,p331f,Teacher questionnaire,Categorical,0.38815467,0.39626286,0.32386009,0.34476367,1,0.36079027,0.33292942,1,0.41354822,1,No,No,No,Assessment of the work of: Inspector
+559,p331g,Teacher questionnaire,Categorical,1,1,0.0712055,0.09823911,1,0.0787234,0.09027567,1,0.23122639,1,No,No,No,Evaluation of the work of: Adviser of the Teachers' Center
+560,p331j,Teacher questionnaire,Categorical,1,1,1,1,1,0.0787234,0.09027567,1,0.22901032,1,No,No,No,Evaluation of the work of: Support teacher of NEAE
+561,pfc,Teacher questionnaire,Categorical,1,1,1,1,1,0.0787234,0.09027567,1,0.22936288,1,No,No,No,Main topic of the Training School Plan (PFC)
+562,rep,Teacher questionnaire,Categorical,1,1,1,1,1,0.07142857,0.09027567,1,0.22241249,1,No,No,No,Teacher of the same class group last year
+563,,,,,,,,,,,,,,,,,
+564,,,,,,,,. ,,,,,,,,,
+565,,,,,,,,. ,,,,,,,,,
