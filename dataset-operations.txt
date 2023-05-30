@@ -1,2 +1,6 @@
-columns_to_remove = id_student, id_student_original, id_year, id_grade, id_class_group, id_school, id_student_16_19, id_school_16_19, student_questionnaire, principals_questionnaire, family_questionnaire, teachers_questionnaire, census
-remove all the rows with scores = 0?
+
+colonne da eliminare = "id_student, id_student_original, id_year, id_grade, id_class_group, id_school, id_student_16_19,
+id_school_16_19, student_questionnaire, principals_questionnaire, principals_questionnaire, teachers_questionnaire, census"
+
+Variabili sensibili = "score_MAT, level_MAT, score_LEN, level_LEN, score_ING, level_ING, a1, a4, repeater, a24,
+a41, a42, country_iso_cnac, country_iso_nac, island, capital_island, public_private, f3a, f3b, mother_education, father_education, f4a, f4b, f5a, f5b, f5n, inmigrant, inmigrant2, inmigrant_second_gen, f11, books, f23, f24a, f24b, mother_occupation, father_occupation, f34, household_income_q, ESCS"
